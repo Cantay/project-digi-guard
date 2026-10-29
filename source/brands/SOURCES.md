@@ -15,6 +15,10 @@ Renk ve oranları korunur; sitede yalnızca boyutlandırılır.
 | odoo.svg | https://odoocdn.com/openerp_website/static/src/img/assets/svg/odoo_logo.svg (odoo.com/page/brand-assets) |
 | google.png | https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png |
 | lugatis.svg | Lugatis (Lugatsoft) kendi logo dosyası: lugatis-logo-acik.svg |
+| lugatsoft.svg | https://www.lugatsoft.com/website_lugatsoft/static/src/img/logo/lugatsoft-ver1.svg |
+| autoronics.svg | https://www.autoronics.com/web/image/26151-1905e63f/autoronics-logo-blue.svg |
+| plusonesmart.png | https://plusonesmart.com/web/image/website/1/logo/PlusOneSmart |
+| plusonecamera.png | https://plusonecamera.com/web/image/website/1/logo/PlusOneSmart (yalnızca saydam kenar boşluğu kırpıldı) |
 
 Odoo, Google, Lugatis ve Meta kartlarındaki "Partner / Business Partner" yazısı site
 sahibinin beyanıyla eklendi. Programların resmî rozet dosyaları (ör. Odoo Ready/Silver/

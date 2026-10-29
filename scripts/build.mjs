@@ -266,7 +266,13 @@ function partnerRow() {
   const P = C.integrations.partners;
   return `<ul class="partners">${P.items
     .map(
-      (b) => `<li class="brand-card partner"><div class="brand-logo">${brandLogo(b)}</div><b class="brand-badge">${esc(b.badge)}</b><span>${esc(b.text)}</span></li>`,
+      (b) => {
+        const inner = `<div class="brand-logo">${brandLogo(b)}</div><b class="brand-badge">${esc(b.badge)}</b><span>${esc(b.text)}</span>`;
+        // Partners with a site: a link to it (title = their name for the reader).
+        return b.url
+          ? `<li class="brand-card partner linked"><a href="${esc(b.url)}" target="_blank" rel="noopener" title="${esc(b.name)}">${inner}<em>${esc(b.url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""))} ↗</em></a></li>`
+          : `<li class="brand-card partner">${inner}</li>`;
+      },
     )
     .join("")}</ul>`;
 }

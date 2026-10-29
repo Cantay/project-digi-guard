@@ -844,7 +844,7 @@
       ]
     },
     "cta": "Entegrasyon çözümlerimizi keşfedin",
-    "disclaimer": "Digi-Guard; Meta (Business Partner), Google, Odoo ve Lugatis iş ortağıdır. Diğer marka adları ve logolar ilgili sahiplerinin tescilli markalarıdır; yalnızca Digi-Guard'ın bu teknolojilerle entegrasyon kabiliyetini göstermek için yer alır ve resmî iş ortaklığı, distribütörlük ya da üretici onayı anlamına gelmez.",
+    "disclaimer": "Digi-Guard; Meta (Business Partner), Google, Odoo, Lugatis, Lugatsoft, Autoronics, PlusOneSmart ve PlusOneCamera iş ortağıdır. Diğer marka adları ve logolar ilgili sahiplerinin tescilli markalarıdır; yalnızca Digi-Guard'ın bu teknolojilerle entegrasyon kabiliyetini göstermek için yer alır ve resmî iş ortaklığı, distribütörlük ya da üretici onayı anlamına gelmez.",
     "check": {
       "title": "Mevcut sistemleriniz Digi-Guard ile uyumlu mu?",
       "text": "Kullandığınız kamera, alarm veya IoT teknolojilerini Digi-Guard platformuyla nasıl birleştirebileceğimizi birlikte değerlendirelim.",
@@ -863,7 +863,7 @@
     "partners": {
       "kicker": "İş ortaklıklarımız",
       "title": "Güçlü teknoloji ortaklıkları",
-      "lead": "Digi-Guard; Meta, Google, Odoo ve Lugatis ile iş ortaklığı içinde çalışır.",
+      "lead": "Digi-Guard; Meta, Google, Odoo, Lugatis, Lugatsoft, Autoronics, PlusOneSmart ve PlusOneCamera ile iş ortaklığı içinde çalışır.",
       "items": [
         {
           "slug": "meta",
@@ -888,6 +888,34 @@
           "name": "Lugatis",
           "badge": "Partner",
           "text": "Çağrı merkezi, iletişim ve yapay zekâ asistanı"
+        },
+        {
+          "slug": "lugatsoft",
+          "name": "Lugatsoft",
+          "badge": "Partner",
+          "text": "Yazılım, Odoo ve dijital dönüşüm çözümleri",
+          "url": "https://www.lugatsoft.com/"
+        },
+        {
+          "slug": "autoronics",
+          "name": "Autoronics",
+          "badge": "Partner",
+          "text": "Endüstriyel otomasyon ve elektronik çözümler",
+          "url": "https://www.autoronics.com/"
+        },
+        {
+          "slug": "plusonesmart",
+          "name": "PlusOneSmart",
+          "badge": "Partner",
+          "text": "Akıllı alarm ve güvenlik ürünleri",
+          "url": "https://plusonesmart.com/"
+        },
+        {
+          "slug": "plusonecamera",
+          "name": "PlusOneCamera",
+          "badge": "Partner",
+          "text": "Akıllı kamera çözümleri",
+          "url": "https://plusonecamera.com/"
         }
       ]
     }
