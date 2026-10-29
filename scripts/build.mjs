@@ -261,6 +261,16 @@ function brandShowcase({ withText = false, marquee = true } = {}) {
   return `${marquee ? strip : grid}<p class="brands-more">${esc(I.more)}</p>`;
 }
 
+/** Our partners: logo, "Partner" under it, what the partnership is about. */
+function partnerRow() {
+  const P = C.integrations.partners;
+  return `<ul class="partners">${P.items
+    .map(
+      (b) => `<li class="brand-card partner"><div class="brand-logo">${brandLogo(b)}</div><b class="brand-badge">${esc(b.badge)}</b><span>${esc(b.text)}</span></li>`,
+    )
+    .join("")}</ul>`;
+}
+
 function flowSteps(steps) {
   return `<ol class="chain">${steps
     .map((st) => `<li><div class="badge">${icon(st.icon)}</div><b>${esc(st.title)}</b></li>`)
@@ -335,7 +345,9 @@ function home() {
 <section class="section dark integ"><div class="wrap">
   <div class="center"><span class="kicker">${esc(C.integrations.kicker)}</span><h2>${esc(C.integrations.title)}</h2>
   <p class="lead">${esc(C.integrations.lead)}</p></div>
-  <div style="margin-top:36px">${brandShowcase()}</div>
+  <div style="margin-top:36px">${partnerRow()}</div>
+  <p class="brands-more" style="margin:26px 0 18px">Entegre çalıştığımız teknolojiler</p>
+  ${brandShowcase()}
   <p class="center" style="margin-top:28px"><a class="btn light" href="/entegrasyonlar/">${esc(C.integrations.cta)} ${icon("arrow")}</a></p>
   <p class="scope">${esc(C.integrations.scope)}</p>
   <p class="disclaimer">${esc(C.integrations.disclaimer)}</p>
@@ -484,6 +496,10 @@ function integrationsPage() {
   const I = C.integrations;
   const topic = encodeURIComponent(I.check.topic);
   const body = `${pageHero({ crumbs: [["Ana sayfa", "/"], ["Entegrasyonlar"]], kicker: I.kicker, title: I.title, lead: I.lead })}
+<section class="section"><div class="wrap">
+  <div class="center"><span class="kicker">${esc(I.partners.kicker)}</span><h2>${esc(I.partners.title)}</h2><p class="lead">${esc(I.partners.lead)}</p></div>
+  <div style="margin-top:30px">${partnerRow()}</div>
+</div></section>
 <section class="section dark integ"><div class="wrap">
   <div class="center"><h2>Entegre teknolojiler ve markalar</h2><p class="lead">${esc(I.intro.text[0])}</p></div>
   <div style="margin-top:34px">${brandShowcase({ withText: true, marquee: false })}</div>

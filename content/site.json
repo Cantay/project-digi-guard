@@ -844,7 +844,7 @@
       ]
     },
     "cta": "Entegrasyon çözümlerimizi keşfedin",
-    "disclaimer": "Digi-Guard bir Meta Business Partner'dır. Diğer marka adları ve logolar ilgili sahiplerinin tescilli markalarıdır; yalnızca Digi-Guard'ın bu teknolojilerle entegrasyon kabiliyetini göstermek için yer alır ve resmî iş ortaklığı, distribütörlük ya da üretici onayı anlamına gelmez.",
+    "disclaimer": "Digi-Guard; Meta (Business Partner), Google, Odoo ve Lugatis iş ortağıdır. Diğer marka adları ve logolar ilgili sahiplerinin tescilli markalarıdır; yalnızca Digi-Guard'ın bu teknolojilerle entegrasyon kabiliyetini göstermek için yer alır ve resmî iş ortaklığı, distribütörlük ya da üretici onayı anlamına gelmez.",
     "check": {
       "title": "Mevcut sistemleriniz Digi-Guard ile uyumlu mu?",
       "text": "Kullandığınız kamera, alarm veya IoT teknolojilerini Digi-Guard platformuyla nasıl birleştirebileceğimizi birlikte değerlendirelim.",
@@ -858,6 +858,37 @@
         "Daha güvenli",
         "Daha akıllı",
         "Daha tasarruflu"
+      ]
+    },
+    "partners": {
+      "kicker": "İş ortaklıklarımız",
+      "title": "Güçlü teknoloji ortaklıkları",
+      "lead": "Digi-Guard; Meta, Google, Odoo ve Lugatis ile iş ortaklığı içinde çalışır.",
+      "items": [
+        {
+          "slug": "meta",
+          "name": "Meta",
+          "badge": "Business Partner",
+          "text": "WhatsApp Business Platform"
+        },
+        {
+          "slug": "google",
+          "name": "Google",
+          "badge": "Partner",
+          "text": "Google teknolojileri ve bulut servisleri"
+        },
+        {
+          "slug": "odoo",
+          "name": "Odoo",
+          "badge": "Partner",
+          "text": "ERP ve iş yönetimi entegrasyonu"
+        },
+        {
+          "slug": "lugatis",
+          "name": "Lugatis",
+          "badge": "Partner",
+          "text": "Çağrı merkezi, iletişim ve yapay zekâ asistanı"
+        }
       ]
     }
   },
