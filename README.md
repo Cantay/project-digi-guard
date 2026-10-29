@@ -21,23 +21,28 @@ npm run build    # yalnızca dist/
 
 `/` · `/nasil-calisir/` · `/cozumler/` · `/cozumler/{dijital-bekci, digi-fire, termal-sensor, sinyalizasyon, uyari-altyapisi, raporlama}/` · `/referanslar/` · `/iletisim/`
 
-## Sunucuda (Docker Compose)
+## Sunucuda (Docker Compose + sunucudaki nginx)
 
-Site Node.js ile derlenip nginx ile sunulur. Yönlendirme ve TLS Traefik'te: konteyner
-Traefik'in Docker ağına (`PROXY_NETWORK`, varsayılan `traefik`) bağlanır, **port 8080**;
-sunucuda dışarı port açılmaz. Konteyner salt okunur çalışır.
+Site Node.js ile derlenip konteynerdeki nginx ile sunulur. Konteyner yalnızca
+`127.0.0.1:8088`'e açılır (dışarıdan erişilemez); alan adı ve TLS sunucudaki nginx'te.
+Konteyner salt okunur çalışır.
 
 ```sh
 git clone git@github.com:Cantay/project-digi-guard.git && cd project-digi-guard
-cp .env.example .env        # SITE_DOMAIN, PROXY_NETWORK
+cp .env.example .env              # SITE_DOMAIN, SITE_PORT
 docker compose up -d --build
+curl -I http://127.0.0.1:8088/    # 200 OK
+
+sudo cp deploy/nginx-digi-guard.conf /etc/nginx/sites-available/digi-guard.conf
+sudo ln -s /etc/nginx/sites-available/digi-guard.conf /etc/nginx/sites-enabled/
+sudo certbot --nginx -d www.digi-guard.com -d digi-guard.com   # sertifika yoksa
+sudo nginx -t && sudo systemctl reload nginx
 ```
 
-- Traefik'i Docker etiketleriyle kullanıyorsanız `.env`'de `TRAEFIK_LABELS=true` yapın;
-  router `Host(SITE_DOMAIN)`, giriş noktası `TRAEFIK_ENTRYPOINT`, sertifika
-  `TRAEFIK_CERTRESOLVER` ile kurulur. Dosya sağlayıcısıyla yönlendiriyorsanız hedef:
-  `http://digi-guard-site-1:8080`.
-- İçerik ya da logo değişince: `git pull && docker compose up -d --build`.
+- `deploy/nginx-digi-guard.conf`: http → https ve kök alan → www yönlendirmesi,
+  `www.digi-guard.com` → `127.0.0.1:8088`. Port `.env`'deki `SITE_PORT` ile aynı olmalı.
+- İçerik ya da logo değişince: `git pull && docker compose up -d --build` (nginx'e
+  dokunmak gerekmez).
 - Alan adı derleme sırasında sayfalara (kanonik bağlantı, sitemap) yazılır; değişirse
   yeniden derleyin.
 

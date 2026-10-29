@@ -1,8 +1,9 @@
-# Digi-Guard web sitesi. Yönlendirme ve TLS Traefik'te: konteyner Traefik'in Docker
-# ağına (PROXY_NETWORK) bağlanır, port 8080; sunucuda dışarı port açılmaz.
+# Digi-Guard web sitesi. Sunucudaki nginx önde durur (alan adı, TLS); bu konteyner
+# yalnızca sunucunun kendisine açılır: 127.0.0.1:${SITE_PORT}.
 #
 #   cp .env.example .env
 #   docker compose up -d --build
+#   sudo cp deploy/nginx-digi-guard.conf /etc/nginx/sites-available/digi-guard.conf  (bkz. README)
 name: digi-guard
 
 services:
@@ -16,18 +17,5 @@ services:
     read_only: true
     tmpfs:
       - /tmp
-    networks: [proxy]
-    labels:
-      # Traefik Docker sağlayıcısı kullanılıyorsa (TRAEFIK_LABELS=true); dosya
-      # sağlayıcısıyla yönlendiriyorsanız bunlar yok sayılır.
-      traefik.enable: ${TRAEFIK_LABELS:-false}
-      traefik.docker.network: ${PROXY_NETWORK:-traefik}
-      traefik.http.routers.digi-guard.rule: Host(`${SITE_DOMAIN}`)${EXTRA_HOST_RULE:-}
-      traefik.http.routers.digi-guard.entrypoints: ${TRAEFIK_ENTRYPOINT:-websecure}
-      traefik.http.routers.digi-guard.tls.certresolver: ${TRAEFIK_CERTRESOLVER:-letsencrypt}
-      traefik.http.services.digi-guard.loadbalancer.server.port: "8080"
-
-networks:
-  proxy:
-    external: true
-    name: ${PROXY_NETWORK:-traefik}
+    ports:
+      - "127.0.0.1:${SITE_PORT:-8088}:8080"
