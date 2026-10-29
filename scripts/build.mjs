@@ -186,7 +186,58 @@ function logoWall(limit) {
     .join("")}</ul>`;
 }
 
+/** Packages: price cards; `compact` leaves out the item lists (home). */
+function planCards(compact = false) {
+  const P = C.packages;
+  return `<div class="plans">${P.plans
+    .map(
+      (p) => `<div class="plan${p.featured ? " featured" : ""}">
+  ${p.featured ? `<span class="ribbon">En çok tercih edilen</span>` : ""}
+  <span class="kicker">${esc(p.tier)}</span>
+  <h3>${esc(p.name)}</h3>
+  <div class="price"><b>${esc(p.price)}</b><span>${esc(p.period)}</span></div>
+  <p>${esc(p.text)}</p>
+  ${compact ? "" : `<ul class="ticks">${p.items.map((i) => `<li>${icon("check")}${esc(i)}</li>`).join("")}</ul>`}
+  <a class="btn${p.featured ? "" : " outline"}" href="/iletisim/?konu=${encodeURIComponent(p.name)}">${esc(compact ? "İncele ve başvur" : p.cta)} ${icon("arrow")}</a>
+</div>`,
+    )
+    .join("")}</div>`;
+}
+
+/** The platform in the middle, the channels around it, joined by lines. */
+function hub(h) {
+  const n = h.channels.length;
+  const nodes = h.channels.map((c, i) => {
+    const a = (Math.PI * 2 * i) / n - Math.PI / 2;
+    return { ...c, x: 50 + 38 * Math.cos(a), y: 50 + 38 * Math.sin(a) };
+  });
+  const lines = nodes
+    .map((p) => `<line x1="50" y1="50" x2="${p.x.toFixed(1)}" y2="${p.y.toFixed(1)}"/>`)
+    .join("");
+  const dots = nodes
+    .map((p) => `<circle r="0.9"><animateMotion dur="2.4s" repeatCount="indefinite" path="M50,50 L${p.x.toFixed(1)},${p.y.toFixed(1)}"/></circle>`)
+    .join("");
+  return `<div class="hub">
+  <svg class="hub-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">${lines}${dots}</svg>
+  <div class="hub-center">${LOGO}<b>Digi-Guard</b><span>${esc(h.center)}</span></div>
+  ${nodes
+    .map(
+      (p) => `<div class="hub-node" style="left:${p.x.toFixed(1)}%;top:${p.y.toFixed(1)}%">
+    <div class="badge">${icon(p.icon)}</div><b>${esc(p.title)}</b><span>${esc(p.text)}</span></div>`,
+    )
+    .join("")}
+</div>`;
+}
+
+function flowSteps(steps) {
+  return `<ol class="chain">${steps
+    .map((st) => `<li><div class="badge">${icon(st.icon)}</div><b>${esc(st.title)}</b></li>`)
+    .join("")}</ol>`;
+}
+
 // ---------- pages ----------
+
+const comm = () => C.solutions.find((x) => x.slug === "uyari-altyapisi");
 
 function home() {
   const h = C.home;
@@ -224,12 +275,24 @@ function home() {
 
 <section class="section"><div class="wrap">
   <div class="center"><span class="kicker">Çözümler</span><h2>Her alana, her riske uygun teknoloji.</h2>
-  <p class="lead">Dijital bekçiden termal yangın erken uyarıya, sinyalizasyondan çok kanallı uyarı ve raporlamaya kadar uçtan uca güvenlik.</p></div>
-  <div style="margin-top:40px">${solutionCards()}</div>
+  <p class="lead">Dijital bekçiden termal yangın erken uyarıya, IoT izleme ve otomasyondan akıllı iletişim ve raporlamaya kadar uçtan uca güvenlik.</p></div>
+  <div style="margin-top:40px">${solutionCards(C.solutions.slice(0, 6))}</div>
+  <p class="center" style="margin-top:24px"><a href="/cozumler/">Tüm çözümler →</a></p>
 </div></section>
 
 <section class="section soft"><div class="wrap">
-  <div class="banner">${picture("kontrol-merkezi.jpg", "Digi-Guard kontrol merkezi")}<p>Her an bağlantıda, her zaman bir adım önde.</p></div>
+  <div class="center"><span class="kicker">${esc(C.packages.kicker)}</span><h2>${esc(C.packages.title)}</h2>
+  <p class="lead">Donanım dahil, aylık abonelikle dijital bekçi. Kamera, anons, mobil uygulama, çağrı merkezi ve sınırsız garanti tek pakette.</p></div>
+  <div style="margin-top:40px">${planCards(true)}</div>
+  <p class="center" style="margin-top:24px"><a href="/paketler/">Paketleri karşılaştırın →</a></p>
+</div></section>
+
+<section class="section dark"><div class="wrap">
+  <div class="center"><span class="kicker">${esc(comm().kicker)}</span><h2>${esc(comm().title)}</h2>
+  <p class="lead">${esc(comm().lead)}</p></div>
+  ${hub(comm().hub)}
+  <p class="commons">${esc(comm().hub.commons)}</p>
+  <p class="center" style="margin-top:20px"><a class="btn light" href="/cozumler/uyari-altyapisi/">Akıllı iletişimi inceleyin ${icon("arrow")}</a></p>
 </div></section>
 
 <section class="section"><div class="wrap center">
@@ -272,12 +335,55 @@ function solutionPage(s) {
   const i = C.solutions.indexOf(s);
   const others = C.solutions.filter((o) => o !== s).slice(0, 3);
   let main = "";
+  if (s.intro) {
+    main += `<section class="section"><div class="wrap"><div class="split">
+  <div><h2>${esc(s.intro.title)}</h2>${s.intro.text.map((t) => `<p class="lead">${esc(t)}</p>`).join("")}</div>
+  <div class="figure plain">${picture(s.image, s.name, "")}</div>
+</div></div></section>`;
+  }
+  if (s.hub) {
+    main += `<section class="section dark"><div class="wrap"><div class="center"><h2>${esc(s.hub.title)}</h2></div>
+  ${hub(s.hub)}<p class="commons">${esc(s.hub.commons)}</p></div></section>`;
+  }
+  if (s.flow) {
+    main += `<section class="section"><div class="wrap"><div class="center"><h2>${esc(s.flow.title)}</h2><p class="lead">${esc(s.flow.lead)}</p></div>
+  ${flowSteps(s.flow.steps)}
+  <div class="example"><b>Örnek senaryo</b><p>${esc(s.flow.example)}</p></div></div></section>`;
+  }
+  if (s.control) {
+    main += `<section class="section soft"><div class="wrap center"><h2>${esc(s.control.title)}</h2><p class="lead">${esc(s.control.text)}</p>
+  <p class="claim">Digi-Guard – ${esc(s.control.line)}</p></div></section>`;
+  }
+  if (s.blocks) {
+    main += `<section class="section"><div class="wrap"><h2>${esc(s.blocksTitle)}</h2><div class="blocks">${s.blocks
+      .map(
+        (b) => `<article class="block">${picture(b.image, b.title)}<div><div class="badge">${icon(b.icon)}</div><h3>${esc(b.title)}</h3><p>${esc(b.text)}</p></div></article>`,
+      )
+      .join("")}</div></div></section>`;
+  }
+  if (s.platform) {
+    main += `<section class="section dark"><div class="wrap"><div class="split">
+  <div><span class="kicker">IoT platformu</span><h2>${esc(s.platformTitle)}</h2><p class="lead">${esc(s.platformLead)}</p></div>
+  <ul class="ticks light">${s.platform.map((i) => `<li>${icon("check")}${esc(i)}</li>`).join("")}</ul>
+</div></div></section>`;
+  }
+  if (s.custom) {
+    main += `<section class="section"><div class="wrap"><div class="cta">
+  <div><h2>${esc(s.custom.title)}</h2><p>${esc(s.custom.text)}</p></div>
+  <div><h3 style="color:#fff">${esc(s.custom.sub)}</h3><p>${esc(s.custom.detail)}</p>
+    <a class="btn light" href="/iletisim/?konu=${encodeURIComponent(s.custom.topic)}">${esc(s.custom.cta)} ${icon("arrow")}</a></div>
+</div></div></section>`;
+  }
+  if (s.packagesLink) {
+    main += `<section class="section soft"><div class="wrap"><div class="center"><span class="kicker">${esc(C.packages.kicker)}</span><h2>Donanım dahil, aylık abonelik</h2></div>
+  <div style="margin-top:32px">${planCards(true)}</div></div></section>`;
+  }
   if (s.features) {
     main += `<section class="section"><div class="wrap"><div class="split${i % 2 ? " flip" : ""}">
   <div><span class="kicker">${esc(s.name)}</span><h2>${esc(s.featuresTitle)}</h2>${features(s.features)}</div>
   <div class="figure${s.slug === "uyari-altyapisi" || s.slug === "termal-sensor" ? " plain" : ""}">${picture(s.image, s.name, "")}</div>
 </div></div></section>`;
-  } else {
+  } else if (!s.intro && !s.blocks) {
     main += `<section class="section"><div class="wrap"><div class="figure">${picture(s.image, s.name, "")}</div></div></section>`;
   }
   if (s.spec) {
@@ -299,7 +405,7 @@ function solutionPage(s) {
     .map((it) => `<div class="card scenario"><div class="badge">${icon(it.icon)}</div><h3>${esc(it.title)}</h3><p>${esc(it.text)}</p>${chips}</div>`)
     .join("")}</div></div></section>`;
   }
-  if (s.banner) {
+  if (s.banner && !s.hub) {
     main += `<section class="section soft"><div class="wrap"><div class="banner">${picture(s.banner.image, "Kontrol merkezi")}<p>${esc(s.banner.text)}</p></div></div></section>`;
   }
   if (s.areas) {
@@ -316,6 +422,18 @@ ${cta()}`;
   return page({ path: solUrl(s), title: `${s.name} · ${S.name}`, description: s.summary, body, image: s.image });
 }
 
+function packagesPage() {
+  const P = C.packages;
+  const body = `${pageHero({ crumbs: [["Ana sayfa", "/"], ["Paketler"]], kicker: P.kicker, title: P.title, lead: P.lead })}
+<section class="section soft"><div class="wrap">${planCards()}
+  <p class="note center" style="margin-top:18px">Fiyatlara KDV dahil değildir. Paketler donanım dahil aylık abonelik olarak sunulur.</p></div></section>
+<section class="section"><div class="wrap"><div class="center"><h2>${esc(P.whyTitle)}</h2></div>
+  <div style="margin-top:32px">${cards(P.why.map((w) => ({ ...w, num: false })), "g3")}</div></div></section>
+${quote(P.slogan)}
+${cta()}`;
+  return page({ path: "/paketler/", title: `Dijital Bekçi Paketleri · ${S.name}`, description: P.lead, body, image: "bekci-otopark.jpg" });
+}
+
 function referencesPage() {
   const r = C.references;
   const total = r.groups.reduce((n, g) => n + g.items.length, 0);
@@ -330,7 +448,9 @@ ${cta()}`;
 
 function contactPage() {
   const c = C.contact;
-  const options = C.solutions.map((s) => `<option>${esc(s.name)}</option>`).join("");
+  const options = [...C.packages.plans.map((p) => p.name), ...C.solutions.map((s) => s.name)]
+    .map((n) => `<option>${esc(n)}</option>`)
+    .join("");
   const body = `${pageHero({ crumbs: [["Ana sayfa", "/"], ["İletişim"]], kicker: "İletişim", title: c.title, lead: c.lead })}
 <section class="section"><div class="wrap"><div class="split">
   <div>
@@ -344,6 +464,7 @@ function contactPage() {
       <button class="btn" type="submit">${esc(c.cta)} ${icon("arrow")}</button>
       <p class="note">Gönder dediğinizde e-posta programınız bu bilgilerle açılır; bilgiler başka bir yere iletilmez.</p>
     </form>
+    <script>{const k=new URLSearchParams(location.search).get("konu");const s=document.querySelector("select[name=topic]");if(k&&s){[...s.options].forEach(o=>{if(o.text===k)s.value=k});}}</script>
   </div>
   <div>
     <div class="figure" style="margin-bottom:28px">${picture(c.image, "Digi-Guard ile korunan tesis", "")}</div>
@@ -378,6 +499,7 @@ const pages = [
   write("nasil-calisir", howPage()),
   write("cozumler", solutionsIndex()),
   ...C.solutions.map((s) => write(`cozumler/${s.slug}`, solutionPage(s))),
+  write("paketler", packagesPage()),
   write("referanslar", referencesPage()),
   write("iletisim", contactPage()),
 ];
