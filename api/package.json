@@ -1,0 +1,16 @@
+{
+  "name": "digi-guard-api",
+  "private": true,
+  "type": "module",
+  "description": "İletişim formunu SMTP ile e-posta olarak gönderir",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "nodemailer": "^6.10.1"
+  }
+}

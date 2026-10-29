@@ -29,7 +29,7 @@ Konteyner salt okunur çalışır.
 
 ```sh
 git clone git@github.com:Cantay/project-digi-guard.git && cd project-digi-guard
-cp .env.example .env              # SITE_DOMAIN, SITE_PORT
+cp .env.example .env              # SITE_DOMAIN, SITE_PORT, SMTP_* (form e-postası)
 docker compose up -d --build
 curl -I http://127.0.0.1:8088/    # 200 OK
 
@@ -45,6 +45,21 @@ sudo nginx -t && sudo systemctl reload nginx
   dokunmak gerekmez).
 - Alan adı derleme sırasında sayfalara (kanonik bağlantı, sitemap) yazılır; değişirse
   yeniden derleyin.
+
+## İletişim formu
+
+Form `/api/contact` adresine gönderilir; compose'daki `api` servisi (Node.js,
+nodemailer) talebi SMTP ile `MAIL_TO` adresine e-posta olarak iletir. "Yanıtla"
+ziyaretçiye gider. Hiçbir şey kaydedilmez.
+
+- SMTP bilgileri sunucudaki `.env`'de: `SMTP_HOST`, `SMTP_PORT` (587 STARTTLS / 465 TLS),
+  `SMTP_USER`, `SMTP_PASS`, `MAIL_FROM`, `MAIL_TO`. `.env` repoya girmez.
+- Korumalar: gizli tuzak alanı, en az 2,5 sn doldurma süresi, IP başına 10 dakikada
+  5 gönderim, alan uzunluk sınırları, e-posta başlıklarına satır sonu sızdırılmaz,
+  KVKK onay kutusu zorunlu.
+- Gönderilemeyen talepler `docker compose logs api`'de görünür; ziyaretçiye telefon ve
+  e-posta önerilir.
+- Testler: `cd api && npm test`.
 
 ## Yayın
 

@@ -655,15 +655,34 @@ function contactPage() {
 <section class="section"><div class="wrap"><div class="split">
   <div>
     <h2>${esc(c.cta)}</h2>
-    <form class="contact" onsubmit="event.preventDefault();const f=new FormData(this);const b=['Ad Soyad: '+f.get('name'),'Firma: '+f.get('company'),'Telefon: '+f.get('phone'),'İlgilenilen çözüm: '+f.get('topic'),'',f.get('message')].join('\\n');location.href='mailto:${S.email}?subject='+encodeURIComponent('Görüşme talebi · '+f.get('company'))+'&body='+encodeURIComponent(b);">
-      <div class="row2"><label>Ad soyad<input name="name" required autocomplete="name"></label>
-      <label>Firma<input name="company" required autocomplete="organization"></label></div>
-      <div class="row2"><label>Telefon<input name="phone" type="tel" autocomplete="tel"></label>
-      <label>İlgilendiğiniz çözüm<select name="topic"><option>Genel bilgi</option>${options}</select></label></div>
-      <label>Mesajınız<textarea name="message" rows="5" placeholder="Tesisiniz, alanlarınız ve ihtiyacınız…"></textarea></label>
+    <form class="contact" id="contact-form" novalidate>
+      <div class="row2"><label>Ad soyad *<input name="name" required maxlength="120" autocomplete="name"></label>
+      <label>Firma *<input name="company" required maxlength="160" autocomplete="organization"></label></div>
+      <div class="row2"><label>E-posta *<input name="email" type="email" required maxlength="254" autocomplete="email"></label>
+      <label>Telefon<input name="phone" type="tel" maxlength="40" autocomplete="tel"></label></div>
+      <label>İlgilendiğiniz çözüm<select name="topic"><option>Genel bilgi</option>${options}</select></label>
+      <label>Mesajınız<textarea name="message" rows="5" maxlength="4000" placeholder="Tesisiniz, alanlarınız ve ihtiyacınız…"></textarea></label>
+      <label class="hp" aria-hidden="true">Web siteniz<input name="website" tabindex="-1" autocomplete="off"></label>
+      <label class="consent"><input type="checkbox" name="consent" required> <span>İletişim talebimin yanıtlanması için paylaştığım kişisel verilerin işlenmesini kabul ediyorum.</span></label>
       <button class="btn" type="submit">${esc(c.cta)} ${icon("arrow")}</button>
-      <p class="note">Gönder dediğinizde e-posta programınız bu bilgilerle açılır; bilgiler başka bir yere iletilmez.</p>
+      <p class="form-status" role="status" aria-live="polite"></p>
+      <p class="note">Bilgileriniz yalnızca talebinizi yanıtlamak için ${esc(S.email)} adresine iletilir.</p>
     </form>
+    <script>
+{const f=document.getElementById("contact-form"),st=f.querySelector(".form-status"),b=f.querySelector("button");
+const started=Date.now();
+const say=(t,ok)=>{st.textContent=t;st.className="form-status "+(ok?"ok":"err");};
+f.addEventListener("submit",async e=>{e.preventDefault();
+ if(!f.reportValidity())return;
+ const d=Object.fromEntries(new FormData(f));d.consent=f.consent.checked;d.started=started;
+ b.disabled=true;say("Gönderiliyor…",true);
+ try{const r=await fetch("/api/contact",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(d)});
+  const j=await r.json().catch(()=>({}));
+  if(r.ok&&j.ok){f.reset();say("Teşekkürler, talebiniz bize ulaştı. En kısa sürede dönüş yapacağız.",true);}
+  else{say(j.error||"Talebiniz iletilemedi. Lütfen ${S.phone} numarasından ya da ${S.email} adresinden ulaşın.",false);b.disabled=false;}
+ }catch{say("Bağlantı kurulamadı. Lütfen ${S.phone} numarasından ya da ${S.email} adresinden ulaşın.",false);b.disabled=false;}
+});}
+    </script>
     <script>{const k=new URLSearchParams(location.search).get("konu");const s=document.querySelector("select[name=topic]");if(k&&s){[...s.options].forEach(o=>{if(o.text===k)s.value=k});}}</script>
   </div>
   <div>

@@ -19,3 +19,20 @@ services:
       - /tmp
     ports:
       - "127.0.0.1:${SITE_PORT:-8088}:8080"
+    depends_on:
+      - api
+
+  # İletişim formu: /api/contact → SMTP ile e-posta. Dışarı açılmaz; site nginx'i iletir.
+  api:
+    build: ./api
+    image: digi-guard/api:${TAG:-latest}
+    restart: unless-stopped
+    read_only: true
+    environment:
+      SMTP_HOST: ${SMTP_HOST:?SMTP_HOST gerekli}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASS: ${SMTP_PASS:-}
+      MAIL_FROM: ${MAIL_FROM:-}
+      MAIL_TO: ${MAIL_TO:-kurumsal@digi-guard.com}
+      TRUST_PROXY: "1"
