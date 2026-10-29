@@ -11,7 +11,7 @@ Renk ve oranları korunur; sitede yalnızca boyutlandırılır.
 | ebs.svg | https://ebssmart.com/wp-content/uploads/2024/07/logo.svg (ebssmart.com sayfa başlığı; basın paketi giriş istiyor) |
 | ewelink.png | https://ewelink.cc/wp-content/uploads/2022/03/eWelinklogo1-350100-1.png (yalnızca saydam kenar boşluğu kırpıldı) |
 | uniview.svg | https://www.uniview.com/tres/images/2022/img/logo2.svg |
-| meta | Logo kullanılmadı: Meta marka kaynakları doğrulanamadı; kart markanın adını gösterir. Kullanmadan önce Meta / WhatsApp marka kurallarına bakın. |
+| meta.svg | https://commons.wikimedia.org/wiki/File:Meta_Platforms_Inc._logo.svg (Wikimedia Commons; Meta'nın resmî dosyası değil). Meta'nın marka kuralları logonun her kullanımı için Meta onayı istiyor; site sahibinin kararıyla eklendi (29.10.2026). |
 
 Kullanım koşulları ilgili marka sahiplerine aittir. Yayından önce her markanın logo
 kullanım kurallarını kontrol edin.
