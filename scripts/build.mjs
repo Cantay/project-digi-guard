@@ -335,6 +335,7 @@ function home() {
   <p class="lead">${esc(C.integrations.lead)}</p></div>
   <div style="margin-top:36px">${brandShowcase()}</div>
   <p class="center" style="margin-top:28px"><a class="btn light" href="/entegrasyonlar/">${esc(C.integrations.cta)} ${icon("arrow")}</a></p>
+  <p class="scope">${esc(C.integrations.scope)}</p>
   <p class="disclaimer">${esc(C.integrations.disclaimer)}</p>
 </div></section>
 
@@ -479,28 +480,33 @@ ${cta()}`;
 
 function integrationsPage() {
   const I = C.integrations;
+  const topic = encodeURIComponent(I.check.topic);
   const body = `${pageHero({ crumbs: [["Ana sayfa", "/"], ["Entegrasyonlar"]], kicker: I.kicker, title: I.title, lead: I.lead })}
-<section class="section"><div class="wrap"><div class="center" style="max-width:820px;margin:0 auto">
-  <h2>${esc(I.intro.title)}</h2>${I.intro.text.map((t) => `<p class="lead">${esc(t)}</p>`).join("")}</div></div></section>
 <section class="section dark integ"><div class="wrap">
-  <div class="center"><h2>Entegre teknolojiler ve markalar</h2></div>
-  <div style="margin-top:32px">${brandShowcase({ withText: true, marquee: false })}</div>
+  <div class="center"><h2>Entegre teknolojiler ve markalar</h2><p class="lead">${esc(I.intro.text[0])}</p></div>
+  <div style="margin-top:34px">${brandShowcase({ withText: true, marquee: false })}</div>
+  <p class="scope">${esc(I.scope)}</p>
 </div></section>
 <section class="section dark"><div class="wrap">
-  <div class="center"><h2>${esc(I.hub.title)}</h2></div>
+  <div class="center"><h2>${esc(I.hub.title)}</h2><p class="lead">${esc(I.intro.text[1])}</p></div>
   ${hub(I.hub)}
   <p class="commons">${esc(I.hub.commons)}</p>
 </div></section>
-<section class="section"><div class="wrap"><div class="split">
-  <div><span class="kicker">Marka bağımsız</span><h2>${esc(I.agnostic.title)}</h2><p class="lead">${esc(I.agnostic.text)}</p>
-  <p class="claim">${esc(I.agnostic.line)}</p></div>
-  <div class="grid g2">${I.agnostic.points.map((p) => `<div class="card"><div class="badge">${icon(p.icon)}</div><h3>${esc(p.title)}</h3></div>`).join("")}</div>
-</div></div></section>
-<section class="section soft"><div class="wrap center">
-  <a class="btn" href="/iletisim/?konu=${encodeURIComponent("Entegrasyon")}">Entegrasyon ihtiyacınızı anlatın ${icon("arrow")}</a>
-  <p class="disclaimer dark-text">${esc(I.disclaimer)}</p>
+<section class="section"><div class="wrap">
+  <div class="center"><span class="kicker">Entegrasyonun avantajları</span><h2>${esc(I.agnostic.title)}</h2><p class="lead">${esc(I.agnostic.text)}</p></div>
+  <div style="margin-top:32px">${cards(I.agnostic.cards.map((c) => ({ ...c, num: false })), "g4")}</div>
 </div></section>
-${cta()}`;
+<section class="section"><div class="wrap"><div class="cta">
+  <div><h2>${esc(I.check.title)}</h2><p>${esc(I.check.text)}</p></div>
+  <div class="cta-buttons"><a class="btn light" href="/iletisim/?konu=${topic}">${esc(I.check.cta)} ${icon("arrow")}</a>
+  <p style="font-size:.85rem;margin:0">${esc(I.scope)}</p></div>
+</div></div></section>
+<section class="closing"><div class="wrap center">
+  <span class="kicker">Digi-Guard</span>
+  <p class="quote">${esc(I.closing.line)}</p>
+  <ul class="points">${I.closing.points.map((p) => `<li>${esc(p)}</li>`).join("")}</ul>
+  <p class="disclaimer">${esc(I.disclaimer)}</p>
+</div></section>`;
   return page({ path: "/entegrasyonlar/", title: `Entegrasyonlar · ${S.name}`, description: I.lead, body });
 }
 
@@ -642,7 +648,7 @@ ${cta()}`;
 
 function contactPage() {
   const c = C.contact;
-  const options = [...C.packages.plans.map((p) => p.name), ...C.solutions.map((s) => s.name), "Entegrasyon"]
+  const options = [...C.packages.plans.map((p) => p.name), ...C.solutions.map((s) => s.name), C.integrations.check.topic]
     .map((n) => `<option>${esc(n)}</option>`)
     .join("");
   const body = `${pageHero({ crumbs: [["Ana sayfa", "/"], ["İletişim"]], kicker: "İletişim", title: c.title, lead: c.lead })}

@@ -742,45 +742,45 @@
   "integrations": {
     "slug": "entegrasyonlar",
     "kicker": "Global teknoloji entegrasyonları",
-    "title": "Dünyanın önde gelen teknolojileriyle entegre.",
-    "lead": "Hikvision, Dahua, Imou, EBS, eWeLink, Meta, Uniview ve daha birçok teknolojiyle uyumlu Digi-Guard altyapısı. Farklı sistemleri tek platformda birleştirin.",
+    "title": "Dünyanın önde gelen teknolojileri, tek akıllı platformda.",
+    "lead": "Digi-Guard; Hikvision, Dahua, Imou, EBS, eWeLink, Meta, Uniview (UNV) ve birçok farklı teknolojiyle entegre çalışabilen esnek altyapısı sayesinde güvenlik, termal izleme, IoT otomasyon ve dijital iletişim çözümlerini tek platformda buluşturur.",
     "intro": {
-      "title": "Dünyanın önde gelen teknolojileri, tek akıllı platformda.",
+      "title": "Mevcut sistemlerinizi değerlendirin, yatırımlarınızı koruyun.",
       "text": [
-        "Digi-Guard, dünya çapında kullanılan güvenlik, kamera, IoT, otomasyon ve iletişim teknolojileriyle entegre çalışabilen esnek altyapısıyla farklı marka ve sistemleri tek bir platformda buluşturur.",
-        "Mevcut teknolojik yatırımlarınızı koruyarak farklı üreticilere ait cihazları, yazılımları ve iletişim servislerini merkezi bir yapı üzerinden yönetmenize yardımcı olur."
+        "Mevcut sistemlerinizi değerlendirin, teknolojik yatırımlarınızı koruyun ve güvenlik altyapınızı akıllı çözümlerle geliştirin.",
+        "Digi-Guard, dünya çapında kullanılan güvenlik, kamera, IoT, otomasyon ve iletişim teknolojileriyle entegre çalışabilen esnek altyapısıyla farklı marka ve sistemleri tek bir platformda buluşturur."
       ]
     },
     "brands": [
       {
         "slug": "hikvision",
         "name": "Hikvision",
-        "text": "Akıllı kamera ve video güvenlik sistemleri"
+        "text": "Video güvenlik ve akıllı kamera sistemleri"
       },
       {
         "slug": "dahua",
         "name": "Dahua Technology",
-        "text": "Video güvenlik ve görüntüleme çözümleri"
+        "text": "Kamera, görüntü analizi ve güvenlik teknolojileri"
       },
       {
         "slug": "imou",
         "name": "Imou",
-        "text": "Akıllı kamera ve bulut tabanlı güvenlik teknolojileri"
+        "text": "Akıllı kameralar, bulut ve IoT çözümleri"
       },
       {
         "slug": "ebs",
-        "name": "EBS",
+        "name": "EBS Smart Security",
         "text": "Alarm haberleşme ve güvenlik sistemleri"
       },
       {
         "slug": "ewelink",
         "name": "eWeLink",
-        "text": "IoT cihazları ve akıllı otomasyon"
+        "text": "IoT cihazları, sensörler ve otomasyon"
       },
       {
         "slug": "meta",
         "name": "Meta",
-        "text": "WhatsApp Business Platform ve iletişim entegrasyonları"
+        "text": "WhatsApp Business Platform ve dijital iletişim"
       },
       {
         "slug": "uniview",
@@ -790,57 +790,75 @@
     ],
     "more": "Ve daha birçok teknolojiyle entegrasyon",
     "hub": {
-      "title": "Entegrasyon mimarisi",
+      "title": "Marka bağımsız, genişletilebilir entegrasyon mimarisi",
       "center": "Digi-Guard akıllı platform",
       "channels": [
         {
           "icon": "camera",
           "title": "Kamera ve video güvenlik",
-          "text": "IP kameralar, NVR/DVR ve video yönetim sistemleri"
+          "text": "Hikvision · Dahua · Imou · Uniview"
         },
         {
           "icon": "siren",
           "title": "Alarm ve haberleşme",
-          "text": "Alarm panelleri ve haberleşme altyapıları"
+          "text": "EBS"
         },
         {
           "icon": "share",
           "title": "IoT ve akıllı otomasyon",
-          "text": "Sensörler, röleler ve akıllı cihazlar"
+          "text": "eWeLink"
         },
         {
           "icon": "chat",
-          "title": "WhatsApp ve dijital iletişim",
-          "text": "WhatsApp Business, SMS ve e-posta servisleri"
+          "title": "Dijital iletişim",
+          "text": "Meta / WhatsApp Business Platform"
         }
       ],
-      "commons": "Farklı markalar. Tek platform. Sınırsız entegrasyon potansiyeli."
+      "commons": "Farklı teknolojileri tek merkezde birleştiren, yeni markalarla genişletilebilen yapı."
     },
     "agnostic": {
-      "title": "Marka bağımsız, esnek ve ölçeklenebilir altyapı",
+      "title": "Farklı teknolojiler, tek merkezden akıllı yönetim.",
       "text": "Digi-Guard, farklı teknolojileri ortak bir platformda birleştirerek işletmelere merkezi kontrol, otomatik alarm yönetimi, akıllı bildirimler ve ihtiyaca özel otomasyon senaryoları sunar.",
-      "points": [
+      "cards": [
+        {
+          "icon": "shield",
+          "title": "Mevcut yatırımlarınızı koruyun",
+          "text": "Uyumlu mevcut cihaz ve altyapılarınızı değerlendirerek yeni yatırım ihtiyacını azaltın."
+        },
         {
           "icon": "monitor",
-          "title": "Merkezi kontrol"
-        },
-        {
-          "icon": "siren",
-          "title": "Otomatik alarm yönetimi"
-        },
-        {
-          "icon": "bell",
-          "title": "Akıllı bildirimler"
+          "title": "Tek platformdan yönetin",
+          "text": "Farklı marka ve teknolojilerden gelen olayları ortak yönetim altyapısında birleştirin."
         },
         {
           "icon": "gear",
-          "title": "İhtiyaca özel otomasyon"
+          "title": "Akıllı otomasyon oluşturun",
+          "text": "Kamera, alarm, IoT sensörleri ve iletişim sistemlerini ihtiyacınıza özel senaryolarla ilişkilendirin."
+        },
+        {
+          "icon": "bell",
+          "title": "Hızlı bildirim ve müdahale",
+          "text": "Çağrı merkezi, otomatik IVR, WhatsApp, SMS ve e-posta entegrasyonlarıyla olayların ilgili kişilere iletilmesini ve müdahale koordinasyonunu hızlandırın."
         }
-      ],
-      "line": "Mevcut sistemlerinizi değiştirmeden, güvenliğinizi akıllandırın."
+      ]
     },
     "cta": "Entegrasyon çözümlerimizi keşfedin",
-    "disclaimer": "Marka adları ve logolar ilgili sahiplerinin tescilli markalarıdır; yalnızca Digi-Guard'ın bu teknolojilerle entegrasyon kabiliyetini göstermek için yer alır. Resmî iş ortaklığı, distribütörlük ya da üretici onayı anlamına gelmez."
+    "disclaimer": "Marka adları ve logolar ilgili sahiplerinin tescilli markalarıdır; yalnızca Digi-Guard'ın bu teknolojilerle entegrasyon kabiliyetini göstermek için yer alır. Resmî iş ortaklığı, distribütörlük ya da üretici onayı anlamına gelmez.",
+    "check": {
+      "title": "Mevcut sistemleriniz Digi-Guard ile uyumlu mu?",
+      "text": "Kullandığınız kamera, alarm veya IoT teknolojilerini Digi-Guard platformuyla nasıl birleştirebileceğimizi birlikte değerlendirelim.",
+      "cta": "Entegrasyon ve uyumluluk analizi talep et",
+      "topic": "Entegrasyon ve uyumluluk analizi"
+    },
+    "scope": "Entegrasyon kapsamı cihaz modeline, yazılım sürümüne ve üreticinin sunduğu API desteğine göre değişebilir; uyumluluk keşif sırasında netleştirilir.",
+    "closing": {
+      "line": "Farklı markalar. Tek platform. Akıllı entegrasyon.",
+      "points": [
+        "Daha güvenli",
+        "Daha akıllı",
+        "Daha tasarruflu"
+      ]
+    }
   },
   "overview": {
     "slug": "akilli-guvenlik-iot-surdurulebilirlik",

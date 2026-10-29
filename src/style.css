@@ -286,9 +286,9 @@ form.contact .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 @media (max-width: 520px) { .hub { grid-template-columns: 1fr; } }
 
 /* integrations */
-.brands { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(7, 1fr); gap: 14px; }
-@media (max-width: 1100px) { .brands { grid-template-columns: repeat(4, 1fr); } }
-@media (max-width: 720px) { .brands { grid-template-columns: repeat(2, 1fr); } }
+.brands { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 1100px) { .brands { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (max-width: 720px) { .brands { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .brand-card { background: rgba(255,255,255,.96); border: 1px solid rgba(148,163,184,.25); border-radius: 16px; padding: 18px; text-align: center; transition: transform .2s, box-shadow .2s; }
 .brand-card:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 0 0 1px rgba(20,184,166,.6), 0 12px 40px rgba(20,184,166,.28); }
 .brand-card > span { display: block; color: var(--muted); font-size: .85rem; margin-top: 10px; }
@@ -413,3 +413,12 @@ form.contact .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   .mini-flow li::after { display: none; }
   .green-grid { grid-template-columns: 1fr; }
 }
+
+.scope { text-align: center; font-size: .85rem; color: #94a3b8; max-width: 44rem; margin: 18px auto 0; }
+.brand-card { background: #f8fafc; }
+.brand-logo img { max-height: 46px; max-width: 150px; height: auto; }
+.integ .hub-node span { color: #5eead4; font-weight: 600; }
+@media (max-width: 1100px) { .brands { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (max-width: 720px) { .brands { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 460px) { .brands { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.brand-logo img { max-width: 100%; }
