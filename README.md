@@ -21,6 +21,26 @@ npm run build    # yalnızca dist/
 
 `/` · `/nasil-calisir/` · `/cozumler/` · `/cozumler/{dijital-bekci, digi-fire, termal-sensor, sinyalizasyon, uyari-altyapisi, raporlama}/` · `/referanslar/` · `/iletisim/`
 
+## Sunucuda (Docker Compose)
+
+Site Node.js ile derlenip nginx ile sunulur. Yönlendirme ve TLS Traefik'te: konteyner
+Traefik'in Docker ağına (`PROXY_NETWORK`, varsayılan `traefik`) bağlanır, **port 8080**;
+sunucuda dışarı port açılmaz. Konteyner salt okunur çalışır.
+
+```sh
+git clone git@github.com:Cantay/project-digi-guard.git && cd project-digi-guard
+cp .env.example .env        # SITE_DOMAIN, PROXY_NETWORK
+docker compose up -d --build
+```
+
+- Traefik'i Docker etiketleriyle kullanıyorsanız `.env`'de `TRAEFIK_LABELS=true` yapın;
+  router `Host(SITE_DOMAIN)`, giriş noktası `TRAEFIK_ENTRYPOINT`, sertifika
+  `TRAEFIK_CERTRESOLVER` ile kurulur. Dosya sağlayıcısıyla yönlendiriyorsanız hedef:
+  `http://digi-guard-site-1:8080`.
+- İçerik ya da logo değişince: `git pull && docker compose up -d --build`.
+- Alan adı derleme sırasında sayfalara (kanonik bağlantı, sitemap) yazılır; değişirse
+  yeniden derleyin.
+
 ## Yayın
 
 `dist/` klasörü herhangi bir statik sunucudan (nginx, Netlify, Cloudflare Pages…) yayınlanır.
