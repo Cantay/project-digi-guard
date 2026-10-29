@@ -841,5 +841,373 @@
     },
     "cta": "Entegrasyon çözümlerimizi keşfedin",
     "disclaimer": "Marka adları ve logolar ilgili sahiplerinin tescilli markalarıdır; yalnızca Digi-Guard'ın bu teknolojilerle entegrasyon kabiliyetini göstermek için yer alır. Resmî iş ortaklığı, distribütörlük ya da üretici onayı anlamına gelmez."
+  },
+  "overview": {
+    "slug": "akilli-guvenlik-iot-surdurulebilirlik",
+    "name": "Genel bakış",
+    "brand": "DIGI-GUARD | DIGI-FIRE | IoT",
+    "metaTitle": "Akıllı Güvenlik, IoT ve Sürdürülebilirlik",
+    "description": "Digi-Guard Dijital Bekçi, Digi-Fire termal erken uyarı ve Digi-Guard IoT ile riskleri azaltın, kaynakları verimli kullanın ve sürdürülebilir bir işletme oluşturun.",
+    "hero": {
+      "kicker": "Akıllı güvenlik, verimli operasyonlar ve sürdürülebilir gelecek",
+      "title": "Güvenliği akıllandırın. Operasyonları verimli hale getirin. Geleceği koruyun.",
+      "lead": "Yapay zekâ destekli güvenlik, termal erken uyarı ve IoT otomasyon teknolojileriyle riskleri azaltın, kaynaklarınızı daha verimli kullanın ve sürdürülebilir bir işletme oluşturun.",
+      "points": [
+        "Daha güvenli",
+        "Daha akıllı",
+        "Daha tasarruflu",
+        "Daha sürdürülebilir"
+      ],
+      "image": "tesis.jpg",
+      "layers": [
+        {
+          "icon": "camera",
+          "title": "Digi-Guard",
+          "text": "Akıllı kamera ve güvenlik analizi"
+        },
+        {
+          "icon": "thermo",
+          "title": "Digi-Fire",
+          "text": "Termal sıcaklık ve erken uyarı"
+        },
+        {
+          "icon": "share",
+          "title": "Digi-Guard IoT",
+          "text": "Sensörler ve otomasyon sistemleri"
+        }
+      ]
+    },
+    "intro": [
+      "Digi-Guard; yapay zekâ destekli Dijital Bekçi, Digi-Fire termal erken uyarı ve IoT akıllı izleme teknolojilerini tek platformda birleştirerek işletmelerin güvenlik, otomasyon ve operasyonel verimlilik ihtiyaçlarına bütünleşik çözümler sunar.",
+      "Geleneksel güvenlik maliyetlerini azaltmaktan yangın risklerini erken tespit etmeye, enerji ve sıcaklık takibinden akıllı geçiş kontrolüne kadar farklı süreçleri dijitalleştirir.",
+      "Amacımız yalnızca güvenliği sağlamak değil; işletmelerin kaynaklarını daha verimli kullanmasını, risklerini azaltmasını ve sürdürülebilir bir gelecek oluşturmasını desteklemektir."
+    ],
+    "techs": {
+      "title": "Üç teknoloji, tek platform",
+      "items": [
+        {
+          "name": "Digi-Guard Dijital Bekçi",
+          "image": "bekci-otopark.jpg",
+          "href": "/cozumler/dijital-bekci/",
+          "text": "Yapay zekâ destekli açık alan güvenliği, akıllı anons, mobil kontrol ve merkezi alarm yönetimi."
+        },
+        {
+          "name": "Digi-Fire",
+          "image": "fire.jpg",
+          "href": "/cozumler/digi-fire/",
+          "text": "Termal kamera ve sensörlerle sürekli sıcaklık takibi, anormal sıcaklık artışı algılama ve erken uyarı."
+        },
+        {
+          "name": "Digi-Guard IoT",
+          "image": "sensor-uretim.jpg",
+          "href": "/cozumler/iot/",
+          "text": "Sıcaklık, varlık, ekipman, geçiş kontrolü, enerji izleme ve özel otomasyon çözümleri."
+        }
+      ]
+    },
+    "savings": {
+      "kicker": "Ekonomik tasarruf ve operasyonel verimlilik",
+      "title": "Daha akıllı sistemler, daha düşük operasyonel maliyetler.",
+      "lead": "Digi-Guard Dijital Bekçi ve IoT çözümleri, işletmelerin tekrarlayan kontrol, gözetim ve takip süreçlerini otomatikleştirerek operasyonel maliyetlerini optimize eder.",
+      "rows": [
+        {
+          "area": "Güvenlik operasyon maliyetleri",
+          "old": "Sabit personel ve vardiya maliyeti",
+          "new": "Uygun senaryolarda yapay zekâ destekli dijital bekçi; öngörülebilir abonelik"
+        },
+        {
+          "area": "Manuel kontrol ihtiyacı",
+          "old": "Ölçüm ve kontrollerin elle yapılması",
+          "new": "IoT sensörleriyle otomatik ölçüm ve eşik alarmı"
+        },
+        {
+          "area": "Saha ziyaretleri",
+          "old": "Rutin kontroller için düzenli ulaşım",
+          "new": "Uzaktan izleme; ziyaret yalnızca gerektiğinde"
+        },
+        {
+          "area": "Ekipman takibi",
+          "old": "Arıza fark edildiğinde müdahale",
+          "new": "Çalışma ve arıza durumunun erken fark edilmesi"
+        },
+        {
+          "area": "Enerji ve kaynak kullanımı",
+          "old": "Tüketim görünmez, israf sonradan anlaşılır",
+          "new": "Çalışma süreleri ve tüketim izlenir, gereksiz kullanım belirlenir"
+        },
+        {
+          "area": "Merkezi yönetim ve raporlama",
+          "old": "Tesis tesis ayrı takip, dağınık kayıt",
+          "new": "Birden fazla tesis tek merkezden, otomatik rapor"
+        }
+      ],
+      "note": "Tasarruf oranları her işletmede farklıdır; yalnızca keşif ve proje verilerinizle hesaplanıp raporlanır.",
+      "points": [
+        "Açık alan güvenliğinde personel ihtiyacının uygun senaryolarda azaltılması",
+        "Birden fazla tesisin tek merkezden yönetilmesi",
+        "Rutin saha kontrollerinin ve gereksiz ulaşımın azaltılması",
+        "IoT sensörleriyle manuel ölçüm ve kontrol işlemlerinin otomatikleştirilmesi",
+        "Ekipman arızalarının erken fark edilmesi",
+        "Enerji, zaman ve insan kaynağının daha verimli kullanılması",
+        "Donanım ve abonelik modelleriyle öngörülebilir işletme maliyetleri"
+      ],
+      "line": "Akıllı teknolojiye yatırım yapın, tekrarlayan operasyonel giderlerinizi azaltın."
+    },
+    "proactive": {
+      "title": "Sadece izlemeyin, riskleri yönetin",
+      "name": "Digi-Guard – Proaktif güvenlik",
+      "image": "how-3.jpg",
+      "text": "Digi-Guard, yapay zekâ destekli kamera analizi ve akıllı anons teknolojileriyle geleneksel güvenlik sistemlerinin ötesine geçer. İnsan ve araç hareketlerini analiz eder, tanımlanan kurallara göre alarm oluşturur ve ilgili kişileri otomatik olarak bilgilendirir.",
+      "points": [
+        "Yapay zekâ destekli insan ve araç algılama",
+        "Akıllı anons ve caydırıcılık senaryoları",
+        "Mobil uygulama üzerinden uzaktan kontrol",
+        "Merkezi alarm ve olay yönetimi",
+        "Çağrı merkezi entegrasyonu",
+        "Çoklu lokasyon güvenliği",
+        "Olay kayıtları ve performans raporlaması"
+      ],
+      "line": "Güvenliği yalnızca kayıt altına alan değil, olaylara karşı harekete geçebilen bir sisteme dönüştürün."
+    },
+    "fire": {
+      "title": "Riskleri erken fark edin, olası kayıpları azaltın",
+      "name": "Digi-Fire – Termal erken uyarı",
+      "image": "fire.jpg",
+      "text": "Digi-Fire, termal kamera ve sensör teknolojileriyle kritik alanlardaki sıcaklık değişimlerini sürekli izler. Anormal sıcaklık artışlarını algılayarak erken uyarı oluşturur ve ilgili kişilerin zamanında bilgilendirilmesine yardımcı olur.",
+      "points": [
+        "Sürekli termal sıcaklık izleme",
+        "Anormal sıcaklık artışlarının algılanması",
+        "Olası yangın risklerine karşı erken bildirim",
+        "Ekipman, stok ve tesis altyapısının korunmasına katkı",
+        "Üretim ve hizmet kesintisi risklerinin azaltılması",
+        "Mobil kontrol ve çağrı merkezi entegrasyonu",
+        "Termal olay kayıtları ve analiz raporları"
+      ],
+      "note": "Digi-Fire, mevzuatın gerektirdiği yangın algılama ve alarm sistemlerinin yerine geçmez; onları destekleyen ilave bir erken uyarı katmanı sunar.",
+      "line": "Erken fark edilen risk, büyük kayıpların önlenmesine yardımcı olabilir."
+    },
+    "scenarios": {
+      "kicker": "Digi-Guard IoT – Akıllı izleme ve otomasyon",
+      "title": "Her işletmenin ihtiyacına özel akıllı çözümler.",
+      "lead": "Digi-Guard IoT, işletmelerin fiziksel dünyadaki cihazlarını, sensörlerini ve otomasyon sistemlerini dijital platforma bağlayarak sürekli izleme, uzaktan kontrol ve akıllı karar mekanizmaları oluşturur. Her sensör bir veri, her veri daha akıllı bir karar.",
+      "items": [
+        {
+          "title": "Soğuk hava deposu",
+          "image": "sensor-depo.jpg",
+          "text": "Soğuk hava depoları, ilaç dolapları ve gıda saklama alanlarında sıcaklık sürekli takip edilir; sınır aşılınca otomatik alarm ile ürün kayıpları, bozulma ve enerji israfının azaltılması hedeflenir.",
+          "flow": [
+            "Sıcaklık sensörü",
+            "Eşik kontrolü",
+            "WhatsApp / SMS / IVR",
+            "Sorumlu ve çağrı merkezi"
+          ]
+        },
+        {
+          "title": "Otel ve aquapark",
+          "image": "fire-otel.jpg",
+          "text": "Su kaydıraklarında sensörler, GO/DUR sinyalizasyonu ve akıllı zamanlama kullanıcıların kontrollü aralıklarla hareket etmesini destekler; tehlikeli yakınlaşma riskinin azaltılmasına yardımcı olur ve tesisin güvenlik prosedürlerini destekler.",
+          "flow": [
+            "Geçiş algılama",
+            "Zamanlama",
+            "Görevliye uyarı",
+            "GO/DUR ışığı"
+          ]
+        },
+        {
+          "title": "Akıllı geçiş kontrolü",
+          "image": "bariyer.jpg",
+          "text": "Kapı, bariyer, turnike ve araç geçiş noktaları otomasyonla yönetilir; yetkilendirme, plaka tanıma ve özel geçiş senaryolarıyla güvenlik ve operasyonel kontrol birlikte sağlanır.",
+          "flow": [
+            "Araç / kişi algılama",
+            "Yetki ve plaka",
+            "Kayıt ve bildirim",
+            "Kapı ve bariyer"
+          ]
+        },
+        {
+          "title": "Endüstriyel tesis",
+          "image": "sensor-uretim.jpg",
+          "text": "Pompa, motor, su deposu, enerji sistemi ve teknik ekipmanlar uzaktan izlenir; sensör verileri ve otomasyon kurallarıyla gereksiz çalışma süreleri, kaynak tüketimi ve arıza riskleri azaltılabilir.",
+          "flow": [
+            "Çalışma ve tüketim",
+            "Anormallik analizi",
+            "Teknik ekibe alarm",
+            "Röle ile kontrol"
+          ]
+        }
+      ],
+      "steps": [
+        "Algılama",
+        "Analiz",
+        "Bildirim",
+        "Kontrol"
+      ],
+      "custom": "Digi-Guard, standart ürünlerin ötesinde işletmenin ihtiyacına uygun donanım, yazılım, sensör ve otomasyon sistemleri geliştirir.",
+      "line": "Ölçün. İzleyin. Analiz edin. Otomatikleştirin."
+    },
+    "response": {
+      "kicker": "Proaktif güvenlik ve erken uyarı",
+      "title": "Riskleri erken fark edin, müdahaleyi hızlandırın.",
+      "lead": "Digi-Guard, Digi-Fire ve IoT sistemleri ortak iletişim altyapısı üzerinden çalışarak kritik olayların ilgili kişilere hızla ulaştırılmasını sağlar.",
+      "steps": [
+        {
+          "icon": "search",
+          "title": "Risk algılama"
+        },
+        {
+          "icon": "gear",
+          "title": "Akıllı analiz"
+        },
+        {
+          "icon": "siren",
+          "title": "Otomatik alarm"
+        },
+        {
+          "icon": "share",
+          "title": "Çok kanallı iletişim"
+        },
+        {
+          "icon": "users",
+          "title": "Müdahale koordinasyonu"
+        }
+      ],
+      "channels": [
+        {
+          "icon": "headset",
+          "title": "7/24 çağrı merkezi"
+        },
+        {
+          "icon": "call",
+          "title": "Otomatik IVR arama"
+        },
+        {
+          "icon": "chat",
+          "title": "WhatsApp"
+        },
+        {
+          "icon": "sms",
+          "title": "SMS"
+        },
+        {
+          "icon": "mail",
+          "title": "E-posta / SMTP"
+        },
+        {
+          "icon": "phone",
+          "title": "Mobil uygulama"
+        }
+      ],
+      "example": "Örneğin bir soğuk hava deposunda sıcaklık sınırı aşıldığında sistem WhatsApp bildirimi gönderebilir, teknik sorumluyu otomatik arayabilir ve olayın çağrı merkezi üzerinden takip edilmesini sağlayabilir. Alarmlar önceliklendirilir; müdahale senaryoları işletmeye göre kurulur.",
+      "line": "Digi-Guard – Sadece algılamaz, bilgilendirir ve harekete geçirir."
+    },
+    "green": {
+      "kicker": "Sürdürülebilirlik ve çevresel katkı",
+      "title": "Akıllı teknolojiyle daha sürdürülebilir işletmeler.",
+      "lead": "Digi-Guard, Digi-Fire ve IoT teknolojileri; işletmelerin çevresel etkilerini azaltmasına, kaynaklarını korumasına ve sürdürülebilirlik hedeflerini desteklemesine yardımcı olur.",
+      "items": [
+        {
+          "icon": "globe",
+          "title": "Daha az ulaşım ve yakıt tüketimi",
+          "text": "Uzaktan izleme ve otomatik kontrol sayesinde rutin saha ziyaretleri azaltılabilir; yakıt tüketimi ve ulaşım kaynaklı karbon emisyonlarının düşürülmesine katkı sağlanabilir."
+        },
+        {
+          "icon": "bolt",
+          "title": "Enerji verimliliği",
+          "text": "Sıcaklık, çalışma süreleri ve enerji tüketimi takip edilerek gereksiz enerji kullanımının belirlenmesi ve azaltılması desteklenir."
+        },
+        {
+          "icon": "thermo",
+          "title": "Daha az gıda ve ürün israfı",
+          "text": "Soğuk zincir takibi ve sıcaklık alarmlarıyla uygunsuz saklama koşulları erken fark edilir, ürün kayıplarının önlenmesine katkı sağlanır."
+        },
+        {
+          "icon": "shield",
+          "title": "Ekipman ve kaynakların korunması",
+          "text": "Anormal çalışma koşullarının erken tespiti, arızaların büyümeden değerlendirilmesine ve ekipmanların daha verimli kullanılmasına yardımcı olur."
+        },
+        {
+          "icon": "chart",
+          "title": "Dijital izleme ve raporlama",
+          "text": "Merkezi izleme, otomatik raporlama ve uzaktan yönetimle manuel kontrol süreçleri azaltılır, operasyonel veriler daha etkin kullanılır."
+        }
+      ],
+      "note": "Çevresel katkılar her işletmede ölçülerek raporlanır; bu sayfada ölçülmemiş enerji veya karbon azaltım oranı verilmez.",
+      "line": "Sürdürülebilirlik, yalnızca çevreyi korumak değil; zamanı, enerjiyi, ekipmanı ve kaynakları akıllıca yönetmektir."
+    },
+    "data": {
+      "kicker": "Ölçülebilir faydalar ve kurumsal raporlama",
+      "title": "İşletmenizi verilerle yönetin.",
+      "lead": "Teknoloji yatırımınızın karşılığını verilerle görün: güvenlik ve otomasyon sistemlerinden elde edilen veriler analiz edilerek performans değerlendirilir.",
+      "metrics": [
+        {
+          "icon": "globe",
+          "label": "Korunan lokasyon",
+          "value": "12"
+        },
+        {
+          "icon": "signal",
+          "label": "Aktif cihaz ve sensör",
+          "value": "248"
+        },
+        {
+          "icon": "siren",
+          "label": "Güvenlik olayı (bu ay)",
+          "value": "37"
+        },
+        {
+          "icon": "thermo",
+          "label": "Soğuk depo sıcaklığı",
+          "value": "3,8 °C"
+        },
+        {
+          "icon": "gear",
+          "label": "Çalışan ekipman",
+          "value": "96 / 98"
+        },
+        {
+          "icon": "clock",
+          "label": "Ort. müdahale süresi",
+          "value": "2 dk 40 sn"
+        },
+        {
+          "icon": "chart",
+          "label": "Operasyon maliyeti endeksi",
+          "value": "Aylık rapor"
+        },
+        {
+          "icon": "bolt",
+          "label": "Enerji tüketimi (haftalık)",
+          "value": "1.240 kWh"
+        }
+      ],
+      "reportsTitle": "İhtiyaca özel hazırlanabilecek raporlar",
+      "reports": [
+        "Güvenlik maliyetleri ve tasarruf analizleri",
+        "Alarm, olay ve müdahale istatistikleri",
+        "Sistem çalışma ve erişilebilirlik raporları",
+        "Sıcaklık ve ortam koşulları analizleri",
+        "Enerji tüketimi ve verimlilik karşılaştırmaları",
+        "Ekipman çalışma ve arıza kayıtları",
+        "Saha ziyaretleri ve ulaşım maliyetleri",
+        "Tahmini karbon emisyonu analizleri",
+        "Operasyonel performans ve sürdürülebilirlik raporları"
+      ],
+      "line": "Ölçülemeyen süreçleri görünür, yönetilemeyen riskleri kontrol edilebilir hale getirin."
+    },
+    "cta": {
+      "title": "İşletmenize özel akıllı güvenlik ve otomasyon çözümlerini birlikte tasarlayalım.",
+      "text": "Digi-Guard, Digi-Fire ve IoT teknolojileriyle işletmenizin güvenlik, otomasyon, maliyet ve sürdürülebilirlik ihtiyaçlarına özel çözümler geliştiriyoruz.",
+      "primary": "Ücretsiz keşif ve risk analizi talep et",
+      "secondary": "IoT ve özel çözümleri keşfet"
+    },
+    "closing": {
+      "line": "Güvenliği dijitalleştiriyoruz. Kaynakları koruyoruz. Geleceği akıllandırıyoruz.",
+      "points": [
+        "Daha güvenli",
+        "Daha akıllı",
+        "Daha tasarruflu",
+        "Daha sürdürülebilir"
+      ]
+    }
   }
 }

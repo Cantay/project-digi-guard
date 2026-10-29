@@ -24,9 +24,9 @@ const solUrl = (s) => `/cozumler/${s.slug}/`;
 // ---------- layout ----------
 
 function header(current) {
-  const solMenu = C.solutions
-    .map((s) => `<a href="${solUrl(s)}">${icon(s.icon)}${esc(s.name)}</a>`)
-    .join("");
+  const solMenu =
+    `<a href="/${C.overview.slug}/">${icon("globe")}${esc(C.overview.name)}: güvenlik, IoT, sürdürülebilirlik</a>` +
+    C.solutions.map((s) => `<a href="${solUrl(s)}">${icon(s.icon)}${esc(s.name)}</a>`).join("");
   const links = C.nav
     .map((n) => {
       const on = current.startsWith(n.href) ? ' aria-current="page"' : "";
@@ -58,6 +58,7 @@ function footer() {
     </div>
     <div><h4>Çözümler</h4><ul>${sols}</ul></div>
     <div><h4>Kurumsal</h4><ul>
+      <li><a href="/${C.overview.slug}/">Akıllı güvenlik, IoT ve sürdürülebilirlik</a></li>
       <li><a href="/nasil-calisir/">Nasıl çalışır?</a></li>
       <li><a href="/referanslar/">Referanslar</a></li>
       <li><a href="/iletisim/">İletişim</a></li>
@@ -293,6 +294,11 @@ function home() {
   <div style="margin-top:36px">${cards(h.needs.items)}</div>
 </div></section>
 
+<section class="section"><div class="wrap"><a class="ov-band" href="/${C.overview.slug}/">
+  <div><span class="kicker">${esc(C.overview.brand)}</span><h2>Akıllı güvenlik, verimli operasyonlar ve sürdürülebilir gelecek.</h2>
+  <p>Dijital Bekçi, Digi-Fire ve IoT'nin işletmenize ekonomik, operasyonel ve çevresel katkısını tek sayfada görün.</p></div>
+  <span class="btn light">Genel bakışı inceleyin ${icon("arrow")}</span></a></div></section>
+
 <section class="section soft"><div class="wrap center">
   <span class="kicker">${esc(how.kicker)}</span>
   <h2>${esc(how.title)}</h2>
@@ -498,6 +504,130 @@ ${cta()}`;
   return page({ path: "/entegrasyonlar/", title: `Entegrasyonlar · ${S.name}`, description: I.lead, body });
 }
 
+function overviewPage() {
+  const O = C.overview;
+  const url = `/${O.slug}/`;
+  const ticks = (items, cls = "") => `<ul class="ticks ${cls}">${items.map((i) => `<li>${icon("check")}${esc(i)}</li>`).join("")}</ul>`;
+  const layerNodes = O.hero.layers
+    .map((l, i) => `<div class="layer l${i}"><div class="badge">${icon(l.icon)}</div><b>${esc(l.title)}</b><span>${esc(l.text)}</span></div>`)
+    .join("");
+  const body = `
+<section class="ov-hero">
+  <div class="bg" style="background-image:url('${img(O.hero.image)}')"></div>
+  <div class="wrap ov-hero-grid">
+    <div>
+      <span class="kicker">${esc(O.brand)}</span>
+      <h1>${esc(O.hero.title)}</h1>
+      <p class="lead">${esc(O.hero.lead)}</p>
+      <ul class="points">${O.hero.points.map((p) => `<li>${esc(p)}</li>`).join("")}</ul>
+      <div class="actions">
+        <a class="btn light" href="/iletisim/?konu=${encodeURIComponent("Digi-Guard Enterprise")}">${esc(O.cta.primary)} ${icon("arrow")}</a>
+        <a class="btn ghost" href="/cozumler/iot/">${esc(O.cta.secondary)}</a>
+      </div>
+    </div>
+    <div class="layers" aria-label="Üç teknoloji, Digi-Guard platformuna bağlı">
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <line x1="50" y1="54" x2="50" y2="12"/><line x1="50" y1="54" x2="14" y2="86"/><line x1="50" y1="54" x2="86" y2="86"/>
+        <circle r="1.2"><animateMotion dur="2s" repeatCount="indefinite" path="M50,12 L50,54"/></circle>
+        <circle r="1.2"><animateMotion dur="2.4s" repeatCount="indefinite" path="M14,86 L50,54"/></circle>
+        <circle r="1.2"><animateMotion dur="2.2s" repeatCount="indefinite" path="M86,86 L50,54"/></circle>
+      </svg>
+      <div class="layer-core">${LOGO}<b>Digi-Guard</b><span>Akıllı platform</span></div>
+      ${layerNodes}
+    </div>
+  </div>
+</section>
+
+<section class="section"><div class="wrap">
+  <div class="center" style="max-width:860px;margin:0 auto">${O.intro.map((t) => `<p class="lead">${esc(t)}</p>`).join("")}</div>
+  <h2 class="center" style="margin-top:46px">${esc(O.techs.title)}</h2>
+  <div class="grid g3" style="margin-top:30px">${O.techs.items
+    .map((t) => `<a class="card sol-card" href="${t.href}">${picture(t.image, t.name)}<div class="body"><h3>${esc(t.name)}</h3><p>${esc(t.text)}</p><span class="more">Çözümleri keşfet ${icon("arrow")}</span></div></a>`)
+    .join("")}</div>
+</div></section>
+
+<section class="section soft"><div class="wrap">
+  <span class="kicker">${esc(O.savings.kicker)}</span><h2>${esc(O.savings.title)}</h2><p class="lead">${esc(O.savings.lead)}</p>
+  <div class="compare" role="table" aria-label="Geleneksel yöntem ve Digi-Guard karşılaştırması">
+    <div class="compare-head" role="row"><span role="columnheader">Alan</span><span role="columnheader">Geleneksel yöntem</span><span role="columnheader">Digi-Guard akıllı yönetim</span></div>
+    ${O.savings.rows
+      .map((r) => `<div class="compare-row" role="row"><b role="cell">${esc(r.area)}</b><span role="cell" class="old">${esc(r.old)}</span><span role="cell" class="new">${icon("check")}${esc(r.new)}</span></div>`)
+      .join("")}
+  </div>
+  <p class="note">${esc(O.savings.note)}</p>
+  <div class="split" style="margin-top:36px;align-items:start">${ticks(O.savings.points)}<p class="claim">${esc(O.savings.line)}</p></div>
+</div></section>
+
+<section class="section"><div class="wrap"><div class="grid g2 duo">
+  ${[O.proactive, O.fire]
+    .map(
+      (x) => `<article class="card duo-card">${picture(x.image, x.name)}<div class="body"><span class="kicker">${esc(x.name)}</span><h3>${esc(x.title)}</h3><p>${esc(x.text)}</p>${ticks(x.points)}${
+        x.note ? `<p class="legal-note">${esc(x.note)}</p>` : ""
+      }<p class="claim small">${esc(x.line)}</p></div></article>`,
+    )
+    .join("")}
+</div></div></section>
+
+<section class="section soft"><div class="wrap">
+  <div class="center"><span class="kicker">${esc(O.scenarios.kicker)}</span><h2>${esc(O.scenarios.title)}</h2><p class="lead">${esc(O.scenarios.lead)}</p></div>
+  <div class="grid g2" style="margin-top:34px">${O.scenarios.items
+    .map(
+      (it) => `<article class="card scen">${picture(it.image, it.title)}<div class="body"><h3>${esc(it.title)}</h3><p>${esc(it.text)}</p>
+    <ol class="mini-flow">${it.flow.map((f, i) => `<li><small>${esc(O.scenarios.steps[i])}</small>${esc(f)}</li>`).join("")}</ol></div></article>`,
+    )
+    .join("")}</div>
+  <p class="center lead" style="margin-top:30px">${esc(O.scenarios.custom)}</p>
+  <p class="claim center">${esc(O.scenarios.line)}</p>
+</div></section>
+
+<section class="section dark"><div class="wrap">
+  <div class="center"><span class="kicker">${esc(O.response.kicker)}</span><h2>${esc(O.response.title)}</h2><p class="lead">${esc(O.response.lead)}</p></div>
+  <ol class="chain on-dark">${O.response.steps.map((st) => `<li><div class="badge">${icon(st.icon)}</div><b>${esc(st.title)}</b></li>`).join("")}</ol>
+  <ul class="channel-row">${O.response.channels.map((c) => `<li>${icon(c.icon)}<span>${esc(c.title)}</span></li>`).join("")}</ul>
+  <div class="example on-dark"><b>Örnek senaryo</b><p>${esc(O.response.example)}</p></div>
+  <p class="commons">${esc(O.response.line)}</p>
+</div></section>
+
+<section class="section green"><div class="wrap">
+  <div class="center"><span class="kicker">${esc(O.green.kicker)}</span><h2>${esc(O.green.title)}</h2><p class="lead">${esc(O.green.lead)}</p></div>
+  <div class="green-grid">${O.green.items.map((g) => `<div class="card"><div class="badge">${icon(g.icon)}</div><h3>${esc(g.title)}</h3><p>${esc(g.text)}</p></div>`).join("")}</div>
+  <p class="note center">${esc(O.green.note)}</p>
+  <p class="claim center">${esc(O.green.line)}</p>
+</div></section>
+
+<section class="section"><div class="wrap">
+  <div class="center"><span class="kicker">${esc(O.data.kicker)}</span><h2>${esc(O.data.title)}</h2><p class="lead">${esc(O.data.lead)}</p></div>
+  <div class="dash" role="img" aria-label="Digi-Guard yönetim paneli örneği, temsili veriler">
+    <div class="dash-top"><span>${LOGO} Digi-Guard yönetim paneli</span><span class="tag">Temsili veriler</span></div>
+    <div class="dash-grid">${O.data.metrics
+      .map(
+        (m, i) => `<div class="metric"><div class="m-ico">${icon(m.icon)}</div><small>${esc(m.label)}</small><b>${esc(m.value)}</b>
+      <svg viewBox="0 0 100 24" preserveAspectRatio="none" aria-hidden="true"><polyline points="${Array.from({ length: 12 }, (_, k) => `${(k * 100) / 11},${(12 + 9 * Math.sin(k * 0.9 + i)).toFixed(1)}`).join(" ")}"/></svg></div>`,
+      )
+      .join("")}</div>
+  </div>
+  <div class="split" style="margin-top:40px;align-items:start">
+    <div><h3>${esc(O.data.reportsTitle)}</h3>${ticks(O.data.reports)}</div>
+    <p class="claim">${esc(O.data.line)}</p>
+  </div>
+</div></section>
+
+<section class="section"><div class="wrap"><div class="cta">
+  <div><h2>${esc(O.cta.title)}</h2><p>${esc(O.cta.text)}</p></div>
+  <div class="cta-buttons">
+    <a class="btn light" href="/iletisim/?konu=${encodeURIComponent("Digi-Guard Enterprise")}">${esc(O.cta.primary)} ${icon("arrow")}</a>
+    <a class="btn ghost" href="/cozumler/iot/">${esc(O.cta.secondary)}</a>
+  </div>
+</div></div></section>
+
+<section class="closing"><div class="wrap center">
+  <span class="kicker">${esc(O.brand)}</span>
+  <p class="quote">${esc(O.closing.line)}</p>
+  <ul class="points">${O.closing.points.map((p) => `<li>${esc(p)}</li>`).join("")}</ul>
+</div></section>`;
+  return page({ path: url, title: `${O.metaTitle} · ${S.name}`, description: O.description, body, image: O.hero.image });
+}
+
 function referencesPage() {
   const r = C.references;
   const total = r.groups.reduce((n, g) => n + g.items.length, 0);
@@ -565,6 +695,7 @@ const pages = [
   ...C.solutions.map((s) => write(`cozumler/${s.slug}`, solutionPage(s))),
   write("paketler", packagesPage()),
   write("entegrasyonlar", integrationsPage()),
+  write(C.overview.slug, overviewPage()),
   write("referanslar", referencesPage()),
   write("iletisim", contactPage()),
 ];
