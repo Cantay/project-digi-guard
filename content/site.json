@@ -780,7 +780,8 @@
       {
         "slug": "meta",
         "name": "Meta",
-        "text": "WhatsApp Business Platform ve dijital iletişim"
+        "text": "WhatsApp Business Platform ve dijital iletişim",
+        "badge": "Business Partner"
       },
       {
         "slug": "uniview",
@@ -811,7 +812,7 @@
         {
           "icon": "chat",
           "title": "Dijital iletişim",
-          "text": "Meta / WhatsApp Business Platform"
+          "text": "Meta Business Partner · WhatsApp Business Platform"
         }
       ],
       "commons": "Farklı teknolojileri tek merkezde birleştiren, yeni markalarla genişletilebilen yapı."
@@ -843,7 +844,7 @@
       ]
     },
     "cta": "Entegrasyon çözümlerimizi keşfedin",
-    "disclaimer": "Marka adları ve logolar ilgili sahiplerinin tescilli markalarıdır; yalnızca Digi-Guard'ın bu teknolojilerle entegrasyon kabiliyetini göstermek için yer alır. Resmî iş ortaklığı, distribütörlük ya da üretici onayı anlamına gelmez.",
+    "disclaimer": "Digi-Guard bir Meta Business Partner'dır. Diğer marka adları ve logolar ilgili sahiplerinin tescilli markalarıdır; yalnızca Digi-Guard'ın bu teknolojilerle entegrasyon kabiliyetini göstermek için yer alır ve resmî iş ortaklığı, distribütörlük ya da üretici onayı anlamına gelmez.",
     "check": {
       "title": "Mevcut sistemleriniz Digi-Guard ile uyumlu mu?",
       "text": "Kullandığınız kamera, alarm veya IoT teknolojilerini Digi-Guard platformuyla nasıl birleştirebileceğimizi birlikte değerlendirelim.",

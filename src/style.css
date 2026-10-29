@@ -432,3 +432,6 @@ form.contact .consent input { margin-top: 4px; width: 18px; height: 18px; flex: 
 .form-status.ok { color: var(--green, #16a34a); }
 .form-status.err { color: var(--red); }
 form.contact button[disabled] { opacity: .6; cursor: wait; }
+
+.brand-badge { display: block; margin-top: -8px; white-space: nowrap; font-size: .82rem; font-weight: 600; color: #1c2b33; letter-spacing: .01em; }
+.brand-card.partner { box-shadow: 0 0 0 2px rgba(0,100,224,.55); }

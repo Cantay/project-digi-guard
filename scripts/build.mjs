@@ -249,7 +249,9 @@ function brandLogo(b) {
 function brandShowcase({ withText = false, marquee = true } = {}) {
   const I = C.integrations;
   const card = (b, hidden = false) =>
-    `<li class="brand-card"${hidden ? ' aria-hidden="true"' : ""}><div class="brand-logo">${brandLogo(b)}</div>${
+    `<li class="brand-card${b.badge ? " partner" : ""}"${hidden ? ' aria-hidden="true"' : ""}><div class="brand-logo">${brandLogo(b)}</div>${
+      b.badge ? `<b class="brand-badge">${esc(b.badge)}</b>` : ""
+    }${
       withText ? `<span>${esc(b.text)}</span>` : ""
     }</li>`;
   const grid = `<ul class="brands">${I.brands.map((b) => card(b)).join("")}</ul>`;
