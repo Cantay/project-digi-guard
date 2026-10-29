@@ -229,6 +229,35 @@ function hub(h) {
 </div>`;
 }
 
+/** A brand's official logo from source/brands/<slug>.(svg|png|webp), copied to
+ * dist/img/brands; without one, its name in plain type (never a drawn logo). */
+const BRAND_DIR = path.join(ROOT, "source/brands");
+function brandLogo(b) {
+  for (const ext of ["svg", "png", "webp"]) {
+    const src = path.join(BRAND_DIR, `${b.slug}.${ext}`);
+    if (fs.existsSync(src)) {
+      const out = path.join(DIST, "img/brands");
+      fs.mkdirSync(out, { recursive: true });
+      fs.copyFileSync(src, path.join(out, `${b.slug}.${ext}`));
+      return `<img src="/img/brands/${b.slug}.${ext}" alt="${esc(b.name)}" loading="lazy">`;
+    }
+  }
+  return `<span class="brand-name">${esc(b.name)}</span>`;
+}
+
+function brandShowcase({ withText = false, marquee = true } = {}) {
+  const I = C.integrations;
+  const card = (b, hidden = false) =>
+    `<li class="brand-card"${hidden ? ' aria-hidden="true"' : ""}><div class="brand-logo">${brandLogo(b)}</div>${
+      withText ? `<span>${esc(b.text)}</span>` : ""
+    }</li>`;
+  const grid = `<ul class="brands">${I.brands.map((b) => card(b)).join("")}</ul>`;
+  const strip = marquee
+    ? `<div class="brand-marquee" aria-hidden="true"><ul>${[...I.brands, ...I.brands].map((b) => card(b, true)).join("")}</ul></div>`
+    : "";
+  return `${marquee ? strip : grid}<p class="brands-more">${esc(I.more)}</p>`;
+}
+
 function flowSteps(steps) {
   return `<ol class="chain">${steps
     .map((st) => `<li><div class="badge">${icon(st.icon)}</div><b>${esc(st.title)}</b></li>`)
@@ -293,6 +322,14 @@ function home() {
   ${hub(comm().hub)}
   <p class="commons">${esc(comm().hub.commons)}</p>
   <p class="center" style="margin-top:20px"><a class="btn light" href="/cozumler/uyari-altyapisi/">Akıllı iletişimi inceleyin ${icon("arrow")}</a></p>
+</div></section>
+
+<section class="section dark integ"><div class="wrap">
+  <div class="center"><span class="kicker">${esc(C.integrations.kicker)}</span><h2>${esc(C.integrations.title)}</h2>
+  <p class="lead">${esc(C.integrations.lead)}</p></div>
+  <div style="margin-top:36px">${brandShowcase()}</div>
+  <p class="center" style="margin-top:28px"><a class="btn light" href="/entegrasyonlar/">${esc(C.integrations.cta)} ${icon("arrow")}</a></p>
+  <p class="disclaimer">${esc(C.integrations.disclaimer)}</p>
 </div></section>
 
 <section class="section"><div class="wrap center">
@@ -434,6 +471,33 @@ ${cta()}`;
   return page({ path: "/paketler/", title: `Dijital Bekçi Paketleri · ${S.name}`, description: P.lead, body, image: "bekci-otopark.jpg" });
 }
 
+function integrationsPage() {
+  const I = C.integrations;
+  const body = `${pageHero({ crumbs: [["Ana sayfa", "/"], ["Entegrasyonlar"]], kicker: I.kicker, title: I.title, lead: I.lead })}
+<section class="section"><div class="wrap"><div class="center" style="max-width:820px;margin:0 auto">
+  <h2>${esc(I.intro.title)}</h2>${I.intro.text.map((t) => `<p class="lead">${esc(t)}</p>`).join("")}</div></div></section>
+<section class="section dark integ"><div class="wrap">
+  <div class="center"><h2>Entegre teknolojiler ve markalar</h2></div>
+  <div style="margin-top:32px">${brandShowcase({ withText: true, marquee: false })}</div>
+</div></section>
+<section class="section dark"><div class="wrap">
+  <div class="center"><h2>${esc(I.hub.title)}</h2></div>
+  ${hub(I.hub)}
+  <p class="commons">${esc(I.hub.commons)}</p>
+</div></section>
+<section class="section"><div class="wrap"><div class="split">
+  <div><span class="kicker">Marka bağımsız</span><h2>${esc(I.agnostic.title)}</h2><p class="lead">${esc(I.agnostic.text)}</p>
+  <p class="claim">${esc(I.agnostic.line)}</p></div>
+  <div class="grid g2">${I.agnostic.points.map((p) => `<div class="card"><div class="badge">${icon(p.icon)}</div><h3>${esc(p.title)}</h3></div>`).join("")}</div>
+</div></div></section>
+<section class="section soft"><div class="wrap center">
+  <a class="btn" href="/iletisim/?konu=${encodeURIComponent("Entegrasyon")}">Entegrasyon ihtiyacınızı anlatın ${icon("arrow")}</a>
+  <p class="disclaimer dark-text">${esc(I.disclaimer)}</p>
+</div></section>
+${cta()}`;
+  return page({ path: "/entegrasyonlar/", title: `Entegrasyonlar · ${S.name}`, description: I.lead, body });
+}
+
 function referencesPage() {
   const r = C.references;
   const total = r.groups.reduce((n, g) => n + g.items.length, 0);
@@ -448,7 +512,7 @@ ${cta()}`;
 
 function contactPage() {
   const c = C.contact;
-  const options = [...C.packages.plans.map((p) => p.name), ...C.solutions.map((s) => s.name)]
+  const options = [...C.packages.plans.map((p) => p.name), ...C.solutions.map((s) => s.name), "Entegrasyon"]
     .map((n) => `<option>${esc(n)}</option>`)
     .join("");
   const body = `${pageHero({ crumbs: [["Ana sayfa", "/"], ["İletişim"]], kicker: "İletişim", title: c.title, lead: c.lead })}
@@ -500,6 +564,7 @@ const pages = [
   write("cozumler", solutionsIndex()),
   ...C.solutions.map((s) => write(`cozumler/${s.slug}`, solutionPage(s))),
   write("paketler", packagesPage()),
+  write("entegrasyonlar", integrationsPage()),
   write("referanslar", referencesPage()),
   write("iletisim", contactPage()),
 ];

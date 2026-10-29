@@ -284,3 +284,27 @@ form.contact .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   .block:nth-child(even) img { order: 0; }
 }
 @media (max-width: 520px) { .hub { grid-template-columns: 1fr; } }
+
+/* integrations */
+.brands { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(7, 1fr); gap: 14px; }
+@media (max-width: 1100px) { .brands { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 720px) { .brands { grid-template-columns: repeat(2, 1fr); } }
+.brand-card { background: rgba(255,255,255,.96); border: 1px solid rgba(148,163,184,.25); border-radius: 16px; padding: 18px; text-align: center; transition: transform .2s, box-shadow .2s; }
+.brand-card:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 0 0 1px rgba(20,184,166,.6), 0 12px 40px rgba(20,184,166,.28); }
+.brand-card > span { display: block; color: var(--muted); font-size: .85rem; margin-top: 10px; }
+.brand-logo { height: 64px; display: grid; place-items: center; }
+.brand-logo img { max-height: 48px; max-width: 160px; width: auto; object-fit: contain; }
+.brand-name { font-weight: 800; font-size: 1.15rem; color: var(--anthracite); letter-spacing: .01em; }
+.brand-marquee { overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.brand-marquee ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 16px; width: max-content; animation: brands 40s linear infinite; }
+.brand-marquee .brand-card { width: 200px; flex: none; }
+.brand-marquee:hover ul { animation-play-state: paused; }
+@keyframes brands { to { transform: translateX(calc(-50% - 8px)); } }
+@media (prefers-reduced-motion: reduce) {
+  .brand-marquee ul { animation: none; flex-wrap: wrap; width: auto; justify-content: center; }
+  .brand-marquee .brand-card[aria-hidden="true"]:nth-child(n+8) { display: none; }
+  .hub-lines circle { display: none; }
+}
+.brands-more { text-align: center; color: var(--teal); font-weight: 700; margin: 22px 0 0; }
+.disclaimer { text-align: center; font-size: .78rem; color: #94a3b8; max-width: 46rem; margin: 26px auto 0; }
+.disclaimer.dark-text { color: var(--muted); }
