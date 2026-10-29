@@ -150,12 +150,10 @@ figure { margin: 0; }
 .ref-group h3 { font-size: .85rem; text-transform: uppercase; letter-spacing: .1em; color: var(--blue-2); }
 .ref-group ul { list-style: none; padding: 0; margin: 0; }
 .ref-group li { padding: 8px 0; border-bottom: 1px solid var(--line); font-weight: 600; }
-.marquee { overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
-.marquee .row { display: flex; gap: 14px; width: max-content; animation: slide 60s linear infinite; }
-.marquee span { white-space: nowrap; padding: 10px 18px; border: 1px solid var(--line); border-radius: 999px; font-weight: 700; color: var(--navy); background: #fff; }
-@keyframes slide { to { transform: translateX(-50%); } }
-@media (prefers-reduced-motion: reduce) { .marquee .row { animation: none; flex-wrap: wrap; width: auto; } }
-
+.logos { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
+.logos li { background: #fff; border: 1px solid var(--line); border-radius: 14px; height: 96px; display: grid; place-items: center; padding: 14px 18px; transition: box-shadow .18s, transform .18s; }
+.logos li:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+.logos img { max-height: 62px; max-width: 100%; width: auto; object-fit: contain; }
 .cta { background: linear-gradient(140deg, var(--navy), var(--blue)); color: #fff; border-radius: 24px; padding: 56px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: center; }
 .cta h2 { color: #fff; }
 .cta p { color: #dbeafe; }
@@ -187,6 +185,7 @@ form.contact .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   .split, .cta { grid-template-columns: 1fr; gap: 32px; }
   .split.flip > :first-child { order: 0; }
   .refs { columns: 2; }
+  .logos { grid-template-columns: repeat(4, 1fr); }
   .foot .cols { grid-template-columns: 1fr 1fr; }
   .step { grid-template-columns: 200px 1fr; }
   .flow { grid-template-columns: repeat(3, 1fr); }
@@ -202,6 +201,9 @@ form.contact .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   .step { grid-template-columns: 1fr; }
   .flow { grid-template-columns: 1fr 1fr; }
   .refs { columns: 1; }
+  .logos { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .logos li { height: 76px; padding: 10px; }
+  .logos img { max-height: 48px; }
   .cta { padding: 32px 22px; }
   form.contact .row2 { grid-template-columns: 1fr; }
   .foot .cols { grid-template-columns: 1fr; }

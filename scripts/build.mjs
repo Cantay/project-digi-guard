@@ -6,6 +6,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { makeImages } from "./images.mjs";
+import { LOGOS, logoFile, makeLogos } from "./logos.mjs";
 import { icon, LOGO } from "../src/icons.mjs";
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
@@ -166,10 +167,23 @@ function solutionCards(list = C.solutions) {
     .join("")}</div>`;
 }
 
-function refsMarquee() {
-  const names = C.references.groups.flatMap((g) => g.items);
-  const row = names.map((n) => `<span>${esc(n)}</span>`).join("");
-  return `<div class="marquee" aria-label="Referanslar"><div class="row">${row}${row}</div></div>`;
+/** The reference logos as a grid; `featured` first (well-known names). */
+function logoWall(limit) {
+  const featured = [
+    "Koç Holding", "Otokoç", "Marriott Otel Grubu", "Antalya Büyükşehir Belediyesi",
+    "Millî Eğitim Bakanlığı", "IC Hotels", "Sur Yapı", "Aeroflot Airways",
+    "Delphin Otel Grubu", "Southwind Hava Yolları", "Özel Vitale Hastanesi", "Osstem Implant",
+    "Hastalya Otomotiv", "Muratpaşa Belediyesi", "Teknima Enerji", "ESA Alarm",
+  ];
+  const order = [
+    ...featured.map((n) => LOGOS.indexOf(n)).filter((i) => i >= 0),
+    ...LOGOS.map((_, i) => i).filter((i) => !featured.includes(LOGOS[i])),
+  ].slice(0, limit ?? LOGOS.length);
+  return `<ul class="logos">${order
+    .map(
+      (i) => `<li title="${esc(LOGOS[i])}"><img src="/img/logos/${logoFile(i)}" alt="${esc(LOGOS[i])}" loading="lazy" decoding="async"></li>`,
+    )
+    .join("")}</ul>`;
 }
 
 // ---------- pages ----------
@@ -221,8 +235,8 @@ function home() {
 <section class="section"><div class="wrap center">
   <span class="kicker">Referanslar</span><h2>${esc(C.references.title)}</h2>
   <p class="lead">${esc(C.references.lead)}</p>
-  <div style="margin-top:32px">${refsMarquee()}</div>
-  <p style="margin-top:28px"><a href="/referanslar/">Tüm referanslar →</a></p>
+  <div style="margin-top:36px">${logoWall(24)}</div>
+  <p style="margin-top:28px"><a class="btn" href="/referanslar/">${LOGOS.length} referansın tümü ${icon("arrow")}</a></p>
 </div></section>
 
 ${quote(h.needs.quote)}
@@ -306,7 +320,8 @@ function referencesPage() {
   const r = C.references;
   const total = r.groups.reduce((n, g) => n + g.items.length, 0);
   const body = `${pageHero({ crumbs: [["Ana sayfa", "/"], ["Referanslar"]], kicker: `${total}+ kurum`, title: r.title, lead: r.lead })}
-<section class="section"><div class="wrap"><div class="refs">${r.groups
+<section class="section"><div class="wrap">${logoWall()}</div></section>
+<section class="section soft"><div class="wrap"><h2>Sektörlere göre</h2><div class="refs" style="margin-top:24px">${r.groups
     .map((g) => `<div class="ref-group"><h3>${esc(g.name)}</h3><ul>${g.items.map((i) => `<li>${esc(i)}</li>`).join("")}</ul></div>`)
     .join("")}</div></div></section>
 ${cta()}`;
@@ -354,6 +369,7 @@ function write(rel, html) {
 }
 
 const images = await makeImages();
+await makeLogos();
 fs.copyFileSync(path.join(ROOT, "src/style.css"), path.join(DIST, "style.css"));
 fs.writeFileSync(path.join(DIST, "favicon.svg"), LOGO.replace('class="logo-mark" ', 'xmlns="http://www.w3.org/2000/svg" '));
 

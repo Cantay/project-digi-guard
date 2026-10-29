@@ -11,6 +11,7 @@ npm run build    # yalnızca dist/
 | Dosya | Ne |
 |---|---|
 | `content/site.json` | Bütün içerik: sayfa planı, başlıklar, metinler, çözümler, referanslar, iletişim. Metni burada değiştirin. |
+| `scripts/logos.mjs` | Referans logolarını katalogun son sayfasından kırpar (`dist/img/logos`). |
 | `scripts/images.mjs` | Görselleri katalog sayfalarından kırpar (`source/pages/pNN.jpg` → `dist/img/*.webp`). |
 | `scripts/build.mjs` | Sayfaları üretir; `sitemap.xml`, `robots.txt` da. Bağımlılığı yalnızca `sharp`. |
 | `scripts/render-pages.swift` | Katalog PDF'ini sayfa görsellerine çevirir (macOS): `swift scripts/render-pages.swift katalog.pdf source/pages 1600` |
