@@ -1,0 +1,239 @@
+{
+  "site": {
+    "name": "Digi-Guard",
+    "url": "https://www.digi-guard.com",
+    "tagline": "Yapay zekâ destekli güvenlik ve IoT çözümleri",
+    "maker": "Egisant Security Technologies",
+    "phone": "0850 260 10 07",
+    "phoneHref": "+908502601007",
+    "email": "kurumsal@digi-guard.com",
+    "closing": "Daha güvenli yarınlar. Bugünden başlar."
+  },
+  "nav": [
+    { "label": "Nasıl Çalışır", "href": "/nasil-calisir/" },
+    { "label": "Çözümler", "href": "/cozumler/", "children": "solutions" },
+    { "label": "Referanslar", "href": "/referanslar/" },
+    { "label": "İletişim", "href": "/iletisim/" }
+  ],
+  "home": {
+    "title": "Digi-Guard · İzleyen Değil, Yöneten Güvenlik",
+    "description": "Firmanıza özel yapay zekâ destekli güvenlik ve IoT çözümleri: dijital bekçi, termal yangın erken uyarı, termal sensörler, sinyalizasyon, çok kanallı uyarı ve raporlama.",
+    "hero": {
+      "eyebrow": "Yapay zekâ destekli güvenlik ve IoT çözümleri",
+      "title": "İzleyen Değil, Yöneten Güvenlik.",
+      "lead": "Firmanıza özel güvenlik ve IoT çözümleri geliştiriyoruz.",
+      "points": ["Daha güvenli", "Daha verimli", "Daha sürdürülebilir"],
+      "image": "hero.jpg"
+    },
+    "needs": {
+      "kicker": "İşletmelerin ihtiyaçları",
+      "title": "Güvenliği ve operasyonları daha akıllı yönetmenin zamanı.",
+      "lead": "İşletmelerin büyümesiyle birlikte güvenlik, izleme ve kontrol ihtiyaçları da çeşitleniyor. Digi-Guard, bu süreçlerin dijital teknolojilerle desteklenmesini sağlayarak daha verimli bir yönetim yapısının oluşturulmasına katkıda bulunur.",
+      "items": [
+        { "icon": "eye", "title": "Sürekli izleme", "text": "Kritik alanların 7/24 takip edilmesi." },
+        { "icon": "search", "title": "Erken tespit", "text": "Riskli durumların zamanında fark edilmesi." },
+        { "icon": "bell", "title": "Hızlı bilgilendirme", "text": "İlgili kişilere doğru zamanda uyarı ulaşması." },
+        { "icon": "chart", "title": "Operasyonel kontrol", "text": "Saha süreçlerinin daha planlı yönetilebilmesi." }
+      ],
+      "quote": "Daha güvenli, daha verimli, daha güçlü işletmeler."
+    }
+  },
+  "how": {
+    "slug": "nasil-calisir",
+    "kicker": "Sistem nasıl çalışır?",
+    "title": "Algılar, analiz eder, harekete geçer.",
+    "description": "Digi-Guard kameralar, mikrofonlar ve sensörlerden gelen veriyi yapay zekâ ile analiz eder, olayı tespit eder ve siren, anons ya da bildirimle otomatik müdahale eder.",
+    "steps": [
+      { "title": "Veri toplama", "text": "Kameralar, mikrofonlar ve sensörlerden gelen veriler sisteme aktarılır.", "image": "how-1.jpg" },
+      { "title": "Yapay zekâ analizi", "text": "Veriler analiz edilerek tanımlanmış olaylar ve riskli durumlar değerlendirilir.", "image": "how-2.jpg" },
+      { "title": "Olay tespiti", "text": "Belirlenen koşullar gerçekleştiğinde sistem alarm oluşturur.", "image": "how-3.jpg" },
+      { "title": "Otomatik müdahale", "text": "Siren, anons, bildirim veya entegrasyonlu cihazlar devreye alınır.", "image": "how-4.jpg" },
+      { "title": "Kayıt ve takip", "text": "Olaylar kaydedilir, raporlanır ve süreç sürekli izlenir.", "image": "how-5.jpg" }
+    ],
+    "quote": "Daha güvenli alanlar, daha kesintisiz operasyonlar."
+  },
+  "solutions": [
+    {
+      "slug": "dijital-bekci",
+      "number": "03",
+      "name": "Dijital Bekçi",
+      "kicker": "Açık alan güvenliği ve dijital bekçi",
+      "title": "Her alanda akıllı güvenlik.",
+      "summary": "Fabrika, depo, şantiye, otopark ve tesis çevrelerinde yapay zekâ destekli izleme ile güvenliği güçlendirir.",
+      "lead": "Dijital Bekçi Sistemi; fabrika, depo, şantiye, otopark ve tesis çevrelerinde yapay zekâ destekli izleme ile güvenliği güçlendirir.",
+      "icon": "eye",
+      "image": "bekci-fabrika.jpg",
+      "areasTitle": "Kullanım alanları",
+      "areas": [
+        { "title": "Fabrika ve üretim tesisleri", "image": "bekci-fabrika.jpg" },
+        { "title": "Depolar ve lojistik merkezleri", "image": "bekci-depo.jpg" },
+        { "title": "Şantiyeler", "image": "bekci-santiye.jpg" },
+        { "title": "Otoparklar", "image": "bekci-otopark.jpg" },
+        { "title": "Kurumsal bina çevreleri", "image": "bekci-bina.jpg" },
+        { "title": "Açık ve yarı açık alanlar", "image": "bekci-acik-alan.jpg" }
+      ],
+      "quote": "Kameralar görür, Digi-Guard anlar."
+    },
+    {
+      "slug": "digi-fire",
+      "number": "04",
+      "name": "Digi-Fire",
+      "kicker": "Digi-Fire · Termal yangın erken uyarı",
+      "title": "Termal kamera ile erken tespit, hızlı müdahale.",
+      "summary": "Termal kameralar ve sensörlerle sıcaklık değişimlerini izler, olası yangın risklerini erkenden fark ettirir.",
+      "lead": "Digi-Fire, termal kameralar ve termal sensörlerle sıcaklık değişimlerini izleyerek olası yangın risklerinin erken fark edilmesine yardımcı olur.",
+      "icon": "fire",
+      "image": "fire.jpg",
+      "featuresTitle": "Nasıl korur?",
+      "features": [
+        { "icon": "fire", "title": "Isı izleme", "text": "Termal kamera ile sıcaklık takibi." },
+        { "icon": "search", "title": "Anomali tespiti", "text": "Riskli sıcaklık değişimleri algılanır." },
+        { "icon": "siren", "title": "Otomatik uyarı", "text": "Anında bildirim ve alarm." },
+        { "icon": "gear", "title": "Entegre müdahale", "text": "Siren, anons veya otomasyon tetiklenir." }
+      ],
+      "areasTitle": "Kullanım alanları",
+      "areas": [
+        { "title": "Depolar", "image": "fire-depo.jpg" },
+        { "title": "Fabrikalar", "image": "fire-fabrika.jpg" },
+        { "title": "Oteller", "image": "fire-otel.jpg" },
+        { "title": "Kamu binaları", "image": "fire-kamu.jpg" }
+      ],
+      "quote": "Hayat kurtaran saniyeler."
+    },
+    {
+      "slug": "termal-sensor",
+      "number": "05",
+      "name": "Termal Sensör",
+      "kicker": "Termal sensör teknolojisi",
+      "title": "Görünmeyen riskleri erken fark edin.",
+      "summary": "Kompakt termal sensörlerle ortam sıcaklığını 7/24 izler; anormal artışlarda anında bildirim gönderir.",
+      "lead": "Digi-Guard termal sensörleri, ortamdaki sıcaklık değişimlerini sürekli izleyerek olası risklerin erken fark edilmesine yardımcı olur. Kompakt tasarımı sayesinde farklı alanlara kolayca entegre edilebilir ve yapay zekâ destekli platformla birlikte çalışır.",
+      "icon": "thermo",
+      "image": "sensor.jpg",
+      "featuresTitle": "Öne çıkanlar",
+      "features": [
+        { "icon": "thermo", "title": "Sürekli sıcaklık takibi", "text": "Ortam sıcaklığını 7/24 izler." },
+        { "icon": "bell", "title": "Erken uyarı", "text": "Anormal sıcaklık artışlarında anında bildirim gönderir." },
+        { "icon": "expand", "title": "Kompakt ve esnek tasarım", "text": "Farklı alanlara kolay montaj imkânı." },
+        { "icon": "gear", "title": "Yapay zekâ entegrasyonu", "text": "Daha doğru analiz ve daha az yanlış alarm." },
+        { "icon": "share", "title": "Kolay entegrasyon", "text": "Mevcut sistemlerle uyumlu çalışır." }
+      ],
+      "spec": {
+        "title": "Sensörün içi",
+        "image": "sensor.jpg",
+        "parts": ["Havalandırmalı dış kapak", "MLX90640 termal kızılötesi sensör", "Bağlantı soketi", "ESP32 işlemci", "Montaj tabanı"],
+        "detail": "768 piksellik termal görüntüleme ile ortamın sıcaklık haritası oluşturulur. Anormal sıcaklık artışları tespit edilerek ihtiyaç duyulan aksiyonlar başlatılabilir.",
+        "detailImage": "sensor-oda.jpg"
+      },
+      "areasTitle": "Kullanım alanları",
+      "areas": [
+        { "title": "Elektrik panoları", "text": "Aşırı ısınma takibi", "image": "sensor-pano.jpg" },
+        { "title": "Üretim ekipmanları", "text": "Makine sıcaklık izleme", "image": "sensor-uretim.jpg" },
+        { "title": "Depo ve stok alanları", "text": "Yangın riski kontrolü", "image": "sensor-depo.jpg" },
+        { "title": "Server odaları", "text": "Cihaz sıcaklık takibi", "image": "sensor-server.jpg" },
+        { "title": "Oteller", "text": "Konfor ve güvenlik", "image": "sensor-otel.jpg" },
+        { "title": "Kamu binaları", "text": "Erken uyarı sistemleri", "image": "sensor-kamu.jpg" }
+      ]
+    },
+    {
+      "slug": "sinyalizasyon",
+      "number": "06",
+      "name": "Sinyalizasyon ve Özel Çözümler",
+      "kicker": "Sinyalizasyon ve özel çözümler",
+      "title": "İhtiyacınıza uygun sistemler, size özel senaryolar.",
+      "summary": "Anons, siren, ışıklı uyarı, röle, kapı-bariyer ve özel otomasyonları mevcut altyapınıza entegre eder.",
+      "lead": "Digi-Guard, farklı güvenlik ve otomasyon ihtiyaçlarına yönelik özelleştirilebilir çözümler geliştirir. Mevcut altyapınızla uyumlu entegrasyonlarla işletmenize özel senaryolar oluşturur.",
+      "icon": "siren",
+      "image": "bariyer.jpg",
+      "featuresTitle": "Neler devreye alınabilir?",
+      "features": [
+        { "icon": "speaker", "title": "Sesli anons", "text": "Otomatik bilgilendirme." },
+        { "icon": "siren", "title": "Siren ve alarm", "text": "Sesli uyarı sistemleri." },
+        { "icon": "signal", "title": "Işıklı uyarı", "text": "Görsel sinyalizasyon." },
+        { "icon": "switch", "title": "Röle kontrolü", "text": "Cihazları çalıştırma." },
+        { "icon": "shield", "title": "Kapı ve bariyer", "text": "Erişim kontrolü." },
+        { "icon": "gear", "title": "Özel otomasyon", "text": "Süreçlere özel çözümler." }
+      ],
+      "quote": "Her işletmeye, kendi operasyonuna uygun teknoloji."
+    },
+    {
+      "slug": "uyari-altyapisi",
+      "number": "07",
+      "name": "Çok Kanallı Uyarı",
+      "kicker": "Çok kanallı uyarı altyapısı",
+      "title": "Doğru bilgi, doğru kişiye, doğru zamanda.",
+      "summary": "Olayları çağrı merkezi, SMS, e-posta, WhatsApp, mobil uygulama, web paneli ve API ile anında ilgili kişilere ulaştırır.",
+      "lead": "Digi-Guard, tespit edilen olayları farklı iletişim kanalları üzerinden ilgili kişilere anında ulaştırır. İhtiyacınıza göre özelleştirilebilir bildirim senaryoları ile güvenlik ve operasyon süreçleriniz her an kontrolünüzde kalır.",
+      "icon": "bell",
+      "image": "telefon.jpg",
+      "featuresTitle": "Neden önemli?",
+      "features": [
+        { "icon": "bolt", "title": "Anlık bildirim", "text": "Olay gerçekleştiği anda bilgilendirme." },
+        { "icon": "users", "title": "Doğru kişiye yönlendirme", "text": "Olay türüne göre yetkilileri bilgilendirme." },
+        { "icon": "gear", "title": "Senaryoya özel yapılandırma", "text": "Farklı olaylar için farklı iletişim akışları." },
+        { "icon": "clock", "title": "7/24 kesintisiz iletişim", "text": "Gün boyu, hızlı ve güvenilir uyarı altyapısı." },
+        { "icon": "shield", "title": "Daha hızlı müdahale", "text": "Olaylara zaman kaybetmeden aksiyon." }
+      ],
+      "channelsTitle": "İletişim kanalları",
+      "channels": [
+        { "icon": "headset", "title": "7/24 çağrı merkezi", "text": "Alarm ve kritik olaylar için operatör desteği." },
+        { "icon": "sms", "title": "SMS bildirimleri", "text": "Yetkili kişilere anlık kısa mesaj." },
+        { "icon": "mail", "title": "E-posta (SMTP)", "text": "Detaylı bildirim ve raporlar." },
+        { "icon": "chat", "title": "WhatsApp entegrasyonu", "text": "Hızlı ve pratik mobil bildirim." },
+        { "icon": "phone", "title": "Mobil uygulama", "text": "Tüm olaylar tek platformda." },
+        { "icon": "monitor", "title": "Web paneli", "text": "Canlı izleme, bildirim ve durum takibi." },
+        { "icon": "share", "title": "API ve entegrasyonlar", "text": "Mevcut sistemlerinizle uyumlu bildirim akışları." }
+      ],
+      "scenarios": {
+        "title": "Özelleştirilebilir senaryolar",
+        "lead": "Olay türüne, lokasyona, zaman dilimine ve öncelik seviyesine göre farklı bildirim akışları oluşturulabilir.",
+        "items": [
+          { "icon": "camera", "title": "Güvenlik olayı", "text": "Kamera, hareket, yetkisiz giriş" },
+          { "icon": "fire", "title": "Yangın riski", "text": "Termal kamera, sıcaklık artışı" },
+          { "icon": "thermo", "title": "IoT uyarısı", "text": "Sıcaklık, nem, kapı durumu" }
+        ]
+      },
+      "banner": { "image": "kontrol-merkezi.jpg", "text": "Her an bağlantıda, her zaman bir adım önde." }
+    },
+    {
+      "slug": "raporlama",
+      "number": "08",
+      "name": "Raporlama",
+      "kicker": "Raporlama desteği ve iş birliği",
+      "title": "Verileri anlamlı bilgilere dönüştürüyoruz.",
+      "summary": "İzleme verileri, olay kayıtları ve operasyonel sonuçlardan ihtiyaçlarınıza uygun raporlar hazırlar.",
+      "lead": "İzleme verileri, olay kayıtları ve operasyonel sonuçlar doğrultusunda ihtiyaçlarınıza uygun raporlar hazırlanmasına destek veriyoruz.",
+      "icon": "chart",
+      "image": "rapor.jpg",
+      "featuresTitle": "Raporlama alanları",
+      "features": [
+        { "icon": "siren", "title": "Güvenlik olayları", "text": "Alarm kayıtları ve analizler." },
+        { "icon": "thermo", "title": "Sensör verileri", "text": "Sıcaklık, nem ve eşik takibi." },
+        { "icon": "check", "title": "Sistem durumu", "text": "Cihaz bağlantıları ve arızalar." },
+        { "icon": "eye", "title": "Operasyonel izleme", "text": "Saha kontrolleri ve süreç verileri." },
+        { "icon": "monitor", "title": "Verimlilik raporları", "text": "Zaman ve kaynak kullanımı." }
+      ]
+    }
+  ],
+  "contact": {
+    "slug": "iletisim",
+    "title": "Güvenliğin geleceğini birlikte yönetelim.",
+    "lead": "İşletmenizin ihtiyaçlarını değerlendirerek size özel çözüm seçeneklerini birlikte planlayalım. Daha güvenli, daha verimli ve daha sürdürülebilir bir gelecek için yanınızdayız.",
+    "cta": "Görüşme talebi oluşturun",
+    "image": "tesis.jpg"
+  },
+  "references": {
+    "slug": "referanslar",
+    "title": "Bazı referanslarımız",
+    "lead": "Kamu kurumlarından otel gruplarına, havacılıktan üretime farklı sektörlerde çözüm sunduğumuz kurumlardan bazıları.",
+    "groups": [
+      { "name": "Kamu kurumları ve belediyeler", "items": ["Millî Eğitim Bakanlığı", "Millî Savunma Bakanlığı Antalya ASAL Şubesi", "Kültür ve Turizm Bakanlığı Antalya Müzesi", "Antalya Büyükşehir Belediyesi", "Muratpaşa Belediyesi", "Alanya Belediyesi", "Burdur Belediyesi", "Çameli Belediyesi", "Antalya Adliyesi İcra Müdürlükleri", "Antalya Yüksek Güvenlikli Ceza İnfaz Kurumu", "L Tipi ve S Tipi Ceza İnfaz Kurumları", "Antalya Barosu", "Antalya Eczacı Odası"] },
+      { "name": "Holding, sanayi ve inşaat", "items": ["Koç Holding", "Otokoç", "Sur Yapı", "Özpınarlar İnşaat", "Hasmer", "Hastalya Otomotiv", "Teknima Enerji", "Remim Mimarlık", "Milklaç Süt Ürünleri", "OVA Kargo"] },
+      { "name": "Turizm ve otelcilik", "items": ["Marriott Otel Grubu", "IC Hotels", "Delphin Otel Grubu", "Let's Stay Hotels", "Leliko Suites", "Mina Travel"] },
+      { "name": "Havacılık", "items": ["Aeroflot Airways", "İran Hava Yolları", "Southwind Hava Yolları", "BBN Hava Yolları", "Blue Bird Havacılık", "Aldis Havacılık"] },
+      { "name": "Sağlık", "items": ["Özel Vitale Hastanesi", "Osstem Implant", "NTA Implant", "Toros Dental"] },
+      { "name": "Eğitim", "items": ["Amerikan Kültür Dil Okulları", "English Time Dil Okulları", "Amerikan VIP Eğitim Kurumları", "24 YD Yabancı Dil Kursu", "İlim Yayma Cemiyeti"] },
+      { "name": "Perakende, medya ve hizmet", "items": ["Göz Balık", "Çikolata Evim", "Roas Medya", "ESA Alarm"] }
+    ]
+  }
+}
